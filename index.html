@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Cuprum|PT+Sans&display=swap" rel="stylesheet">
   </head>
   <body>
-    <!-- 9. Личный проект: продолжаем разметку -->
+    <!-- 10. Личный проект: завершаем разметку -->
     <header class="header">
       <div class="header__upper">
         <a href="#">
@@ -39,7 +39,7 @@
           <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
         </div>
         <div>
-          <button type="button"><img src="img/icon-login.svg" width="20" height="17" alt="Вход в личный кабинет"></button>
+          <button type="button"><img src="img/icon-login.svg" width="20" height="17" alt="Вход в личный кабинет">Войти</button>
           <a href="">Регистрация</a>
         </div>
       </div>
@@ -60,22 +60,22 @@
 
     <main>
     <section class="catalog">
-      <h1>Техномарт</h1>
+      <h1 class="visually-hidden">Техномарт</h1>
       <h2 class="visually-hidden">Каталог товаров</h2>
       <div class="catalog__card">
         <h3>Материалы</h3>
         <a href="">На любой вкус</a>
-        <img src="img/icon-1.svg" alt="Иконка материалов">
+        <img src="img/icon-1.svg" alt="">
       </div>
       <div class="catalog__card">
         <h3>Инструмент</h3>
         <a href="">На все случаи жизни</a>
-        <img src="img/icon-2.svg" alt="Иконка инструмента">
+        <img src="img/icon-2.svg" alt="">
       </div>
       <div class="catalog__card">
         <h3>Техника</h3>
         <a href="">Для стройки</a>
-        <img src="img/icon-3.svg" alt="Иконка техники">
+        <img src="img/icon-3.svg" alt="">
       </div>
       <div class="catalog__slider">
         <div class="slider-catalog__darker">
@@ -94,17 +94,17 @@
           </div>
         </div>
         <a href="catalog.html">Открыть каталог</a>
-        <img src="img/icon-3.svg" alt="Иконка техники">
+        <img src="img/icon-3.svg" alt="">
       </div>
       <div class="catalog__card">
         <h3>Скидки 50%</h3>
         <a href="">На 350 товаров</a>
-        <img src="img/icon-4.svg" alt="Иконка скидки">
+        <img src="img/icon-4.svg" alt="">
       </div>
       <div class="catalog__card">
         <h3>Доставка</h3>
         <a href="">Бесплатно</a>
-        <img src="img/icon-5.svg" alt="Иконка скидки">
+        <img src="img/icon-5.svg" alt="">
       </div>
     </section>
     <section class="popular">
@@ -202,18 +202,21 @@
       <div class="features_bottom">
         <div class="bottom-features__list">
           <ul>
-            <a href="#">
-              <li>Доставка</li>
+              <li>
+                <button type="button" class="list-features-bottom__btn">Доставка</button>
+              </li>
             </a>
-            <a href="#">
-              <li>Гарантия</li>
+              <li>
+                <button type="button" class="list-features-bottom__btn list-features-bottom__btn-active">Гарантия</button>
+              </li>
             </a>
-            <a href="#">
-              <li>Кредит</li>
+              <li>
+                <button type="button" class="list-features-bottom__btn">Кредит</button>
+              </li>
             </a>
           </ul>
         </div>
-        <div class="bottom-features__description">
+        <div class="bottom-features__description-delivery">
           <h2>Доставка</h2>
           <p>
             Мы с удовольствием доставим ваш товар прямо 
@@ -221,9 +224,24 @@
             Ведь мы неплохо заработаем, 
             поднимая его на ваш этаж!
           </p>
+          <img src="img/services-car.png" alt="">
         </div>
-        <div class="bottom-features__image">
-          <img src="img/services-car.png" alt="Условия доставки">
+        <div class="bottom-features__description-guarantee">
+          <h2>Гарантия</h2>
+          <p>
+            Eсли купленный у нас товар поломается или заискрит, 
+            а также в случае пожара, спровоцированного его возгоранием,  вы всегда можете быть уверены в нашей гарантии. Мы обменяем сгоревший товар на новый. 
+            Дом уж восстановите как-нибудь сами.
+          </p>
+          <img src="img/services-badge.png" alt="">
+        </div>
+        <div class="bottom-features__description-guarantee">
+          <h2>Кредит</h2>
+          <p>
+            Залезть в долговую яму стало проще! 
+            Кредитные консультанты придут вам на помощь.
+          </p>
+          <img src="img/services-contract.png" alt="">
         </div>
       </div>
     </section>
@@ -242,7 +260,7 @@
           <li>Автотрейдинг</li>
           <li>ЖелДорЭкспедиция</li>
         </ul>
-        <button type="button">Подробнее о компании</button>
+        <a href="#">Подробнее о компании</a>
       </div>
       <div class="about__contacts">
         <h2>Контакты</h2>
@@ -250,7 +268,7 @@
            заехав в наш офис:
         </p>
         <img src="img/min-map.png" width="300" height="158" alt="Как проехать до нашего офиса">
-        <a href="">Заблудились? Напишите нам!</a>
+        <button type="button">Заблудились? Напишите нам!</button>
       </div>
     </section>
       <section class="modal modal-writeus visually-hidden">
