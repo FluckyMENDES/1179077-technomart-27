@@ -1,3 +1,53 @@
-body {
-    font-family: 'Cuprum', sans-serif;
+html {
+    box-sizing: border-box; 
 }
+
+*, 
+*::before, 
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    
+}
+
+img { max-width: 100% }
+a { text-decoration: none }
+
+
+.header{
+
+}
+
+.header__upper {
+    font-family: 'Cuprum', sans-serif;
+    font-size: 17px;
+    color: #ffffff;
+    background: #293449;
+}
+
+.header__upper a {
+    color: #fff;
+}
+
+.icon-search {
+    
+}
+
+.header__middle {
+
+}
+
+.header__middle p {
+
+}
+
+.btn {
+
+}
+
+.header__menu {
+
+}
+
