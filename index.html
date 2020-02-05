@@ -5,28 +5,32 @@
     <title>HTML Academy: Техномарт</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/stlye.css">
-    <link href="https://fonts.googleapis.com/css?family=Cuprum|PT+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700&display=swap&subset=cyrillic" rel="stylesheet">
   </head>
   <body>
     <!-- 10. Личный проект: завершаем разметку -->
     <header class="header">
       <div class="header__upper">
-        <a href="#">
-          <img src="img/logo.png" alt="Интернет-магазин строительных материалов и инструментов для ремонта Техномарт" >
-        </a>
-        <a href="#">
-          <img src="img/icon-search.svg" width="17" height="17" alt="Поиск по сайту">
-          Поиск:
-        </a>
-        <a href="#">
-          <img src="img/icon-bookmark.svg" width="14" height="16" alt="Добавленные закладки">
-          Закладки: 0
-        </a>
-        <a href="#">
-          <img src="img/cart-icon.svg" width="15" height="15" alt="Товары добавленные в корзину">
-          Корзина:0
-        </a>
-        <a href="#">Оформить заказ</a>
+        <div class="header__upper__logo">
+          <a href="#">
+            <img src="img/logo.png" alt="Интернет-магазин строительных материалов и инструментов для ремонта Техномарт" >
+          </a>
+        </div>
+        <div class="header__upper__controls">
+          <a href="#">
+            <img src="img/icon-search.svg" width="17" height="17" alt="Поиск по сайту">
+            Поиск:
+          </a>
+          <a href="#">
+            <img src="img/icon-bookmark.svg" width="14" height="16" alt="Добавленные закладки">
+            Закладки: 0
+          </a>
+          <a href="#">
+            <img src="img/icon-cart.svg" width="15" height="15" alt="Товары добавленные в корзину">
+            Корзина:0
+          </a>
+          <a href="#" class="header__upper__controls__link-btn">Оформить заказ</a>
+        </div> 
       </div>
       <div class="header__middle">
         <p>
@@ -34,14 +38,14 @@
           строительных материалов <br>
           и инструментов для ремонта
         </p>
-        <div>
+        <div class="header__middle__phone">
           <img src="img/icon-phone.svg" width="15" height="15" alt="Как с нами связаться">
           <span>+7 (812) 555-05-55</span>
-          <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
         </div>
+        <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
         <div>
           <button type="button" class="btn"><img src="img/icon-login.svg" width="20" height="17" alt="Вход в личный кабинет">Войти</button>
-          <a href="">Регистрация</a>
+          <a href="#" class="link-btn">Регистрация</a>
         </div>
       </div>
       <div class="header__menu">
