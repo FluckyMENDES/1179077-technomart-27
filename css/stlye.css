@@ -15,10 +15,20 @@ body {
 img { max-width: 100% }
 a { text-decoration: none }
 
+
+.header__upper__wrapper {
+    background: #293449;
+    width: 100%;
+    height: 100%;
+}
+
 .header__upper {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    width: 940px;
+    height: 42px;
+    margin: 0 auto;
     font-size: 17px;
     color: #ffffff;
     background: #293449;
@@ -29,49 +39,137 @@ a { text-decoration: none }
 }
 
 .header__upper__logo {
-    padding: 15px 55px;
-    background: #ee3643;
+    width: 220px;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #ee3643;
+    background-image: url('/img/logo.png');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
     box-shadow: 0px 5px 0px #b52933;
 }
 
-.header__upper-search img,
-.header__upper-bookmarks img,
-.header__upper-cart img {
-    opacity: 0.3;
+.header__upper__logo:hover {
+    background-color: #ca2c37;
+    box-shadow: 0px 5px 0px #9a212a;
+}
 
+.header__upper__logo:active {
+    background-color: #ba2732;
+    box-shadow: 0px 5px 0px #8e1e26;
 }
 
 
 .header__upper-search {
-    margin-right: 200px;
+
+}
+
+.header__link-btn-search {
+    position: relative;
+}
+
+.header__link-btn-search::before {
+    content : "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url('/img/icon-search.svg');
+    background-position: 5% 50%;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+}
+
+
+
+/* Устанавливаем размер и центровку текста внутри кнопок меню */
+.header__link-btn {
+    display: block;
+    width: 150px;
+    height: 42px;
+    text-align: center;
+    line-height: 42px;
+}
+
+/* Добавляем иконку кнопке меню */
+.header__link-btn-bookmarks {
+    position: relative;
+}
+
+/* Добавляем иконку */
+.header__link-btn-bookmarks::before {
+    content : "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url('/img/icon-bookmark.svg');
+    background-position: 5% 50%;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+}
+
+/* Добавляем иконку кнопке меню */
+.header__link-btn-cart {
+    position: relative;
+}
+
+/* Добавляем иконку */
+.header__link-btn-cart::before {
+    content : "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url('/img/icon-cart.svg');
+    background-position: 5% 50%;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+}
+
+.header__link-btn-blue {
+    background-color: #293449;
 }
 
 .header__link-btn-green {
-    padding: 17px 20px;
-    background: #63a63e;
+    background-color: #63a63e;
+}
+
+.header__link-btn-green:hover {
+    background-color: #5fbb2d;
+}
+
+.header__link-btn-green:active {
+    background-color: #518534;
+}
+
+
+.header__middle_wrapper {
+    width: 100%;
+    height: 278px;
+    background: #f4f7f9;
 }
 
 .header__middle {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-start;
+    width: 940px;
+    margin: 0 auto;
     padding-top: 45px;
-    padding-bottom: 45px;
-    background: #f4f7f9;
-
+    padding-bottom: 35px;
 }
 
 .header__middle__phone + p {
     color: #32425c;
-}
-
-.header__middle__phone {
-    padding: 10px;
-    font-size: 21px;
-    color: #ee3643;
-    border: 3px solid #fff;
-    text-align: center;
-    background: url(/img/icon-phone.svg) 5v% 50% no-repeat;
 }
 
 .header__middle p:first-child {
@@ -80,6 +178,16 @@ a { text-decoration: none }
     line-height: 23px;
     color: #ee3643;
     margin-top: 0;
+    margin-left: 50px;
+}
+
+.header__middle__phone {
+    padding: 10px;
+    font-size: 21px;
+    color: #ee3643;
+    border: 3px solid #fff;
+    text-align: center;
+    background: url(/img/icon-phone.svg) 5% 50% no-repeat;
 }
 
 .header__middle p:nth-of-type(2) {
@@ -94,6 +202,7 @@ a { text-decoration: none }
     border: none;
     font-size: 21px;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .btn img {
@@ -108,29 +217,48 @@ a { text-decoration: none }
     background: #fff;
 }
 
+
 .header__menu ul {
     display: flex;
-    height: 60px;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    width: 940px;
+    height: 60px;
+    margin: 0 auto;
     background: #32425c;
+    padding-left: 55px;
+    padding-right: 55px;
+    list-style: none;
     box-shadow: inset 0px -5px 0px #293449;
 }
 
-.header__menu ul {
-    list-style: none;
-}
 
 .header__menu a {
     color: #fff;
+    display: block;
+    padding: 21px 10px;
 }
 
+.header__menu a:hover {
+    background: #000;
+    padding: 21px 10px;
+}
+
+.columns-2__wrapper {
+    width: 100%;
+    min-height: 500px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
 
 .columns-2 {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
+.about {
+    margin-right: 120px;
+}
 .about h2,
 .contacts h2 {
     font-size: 35px;
@@ -143,6 +271,10 @@ a { text-decoration: none }
     font-family: 'PT Sans', sans-serif;
     font-size: 13px;
     line-height: 24px;
+}
+
+.contacts p {
+    margin-bottom: 40px;
 }
 
 .about ul {
@@ -170,32 +302,59 @@ a { text-decoration: none }
 
 .btn-link-red,
 .btn-red {
-    padding: 15px 40px;
+    display: block;
+    height: 38px;
+    text-align: center;
     background: #ee3643;
     border-radius: 5px;
     color: #fff;
     text-transform: uppercase;
-    margin-bottom: 86px;
     border: none;
+    cursor: pointer;
+}
+
+.btn-link-red {
+    width: 220px;
+}
+
+
+.btn-red {
+    width: 300px;
 }
 
 .btn-map {
+    width: 300px;
+    height: 160px;
     background: url('/img/min-map.png');
     border: none;
     margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.footer_wrapper {
+    width: 100%;
+    min-height: 194px;
+    background-color: #32425c;
 }
 
 .footer__upper {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 940px;
+    margin: 0 auto;
     background-color: #32425c;
 }
 
 .footer__upper__logo {
-    align-self: flex-start ;
-    padding: 21px 42px;
-    background: #ee3643;
-    box-shadow: 0px 5px 0px #b52933;
+    align-self: flex-start;
+    width: 220px;
+    height: 68px;
+    padding: 21px 42px 26px;
+    background-color: #ee3643;
+    background-image: url('/img/logo.png');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    box-shadow: inset 0px -5px 0px #b52933;
 }
 
 .footer__upper ul,
@@ -219,7 +378,9 @@ a { text-decoration: none }
 
 .footer__bottom {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 940px;
+    margin: 0 auto;
     background-color: #32425c;
 }
 
@@ -237,10 +398,18 @@ a { text-decoration: none }
     margin-bottom: 80px;
 }
 
+.footer__original__wrapper {
+    width: 100%;
+    min-height: 107px;
+    background-color: #293449;
+}
+
 .footer__original {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    width: 940px;
+    margin: 0 auto;
     background-color: #293449;
     color: #fff;
 }

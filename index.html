@@ -10,62 +10,66 @@
   <body>
     <!-- 10. Личный проект: завершаем разметку -->
     <header class="header">
-      <div class="header__upper">
-        <div class="header__upper__logo">
-          <a href="#">
-            <img src="img/logo.png" alt="Интернет-магазин строительных материалов и инструментов для ремонта Техномарт" >
-          </a>
-        </div>
-        <div class="header__upper-search">
-          <a href="#">
-            <img src="img/icon-search.svg" width="17" height="17" alt="Поиск по сайту">
-            Поиск:
-          </a>
-        </div>
-        <div class="header__upper-bookmarks">
-          <a href="#">
-            <img src="img/icon-bookmark.svg" width="14" height="16" alt="Добавленные закладки">
-            Закладки: 0
-          </a>
-        </div>
-        <div class="header__upper-cart">
-          <a href="#">
-            <img src="img/icon-cart.svg" width="15" height="15" alt="Товары добавленные в корзину">
-            Корзина:0
-          </a>
-        </div>
-        <a href="#" class="header__link-btn-green">Оформить заказ</a>
-      </div>
-      <div class="header__middle">
-        <p>
-          Интернет-магазин <br>
-          строительных материалов <br>
-          и инструментов для ремонта
-        </p>
-        <div>
-          <div class="header__middle__phone">
-            <span>+7 (812) 555-05-55</span>
+      <div class="header__upper__wrapper">
+        <div class="header__upper">
+          <div>
+            <a href="#">
+              <div class="header__upper__logo"></div>
+            </a>
           </div>
-          <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
-        </div>
-        <div>
-          <button type="button" class="btn"><img src="img/icon-login.svg" width="20" height="17" alt="Вход в личный кабинет">Войти</button>
-          <a href="#" class="link-btn">Регистрация</a>
+          <div class="header__upper-search">
+            <a href="#" class="header__link-btn-search">
+              Поиск:
+            </a>
+          </div>
+          
+          <div class="header__upper-bookmarks">
+            <a href="#"  class="header__link-btn header__link-btn-blue header__link-btn-bookmarks">
+              
+              Закладки: 0
+            </a>
+          </div>
+          <div class="header__upper-cart">
+            <a href="#" class="header__link-btn header__link-btn-blue header__link-btn-cart">
+              Корзина: 0
+            </a>
+          </div>
+          <a href="#" class="header__link-btn header__link-btn-green">Оформить заказ</a>
         </div>
       </div>
-      <div class="header__menu">
-        <nav>
-          <ul>
-            <li><a href="index.html">Главная</a></li>
-            <li><a href="">Компания</a></li>
-            <li><a href="catalog.html">Каталог</a></li>
-            <li><a href="">Новости</a></li>
-            <li><a href="">Спецпредложения</a></li>
-            <li><a href="">Доставка</a></li>
-            <li><a href="">Контакты</a></li>
-          </ul>
-        </nav>
+      <div class="header__middle_wrapper">
+        <div class="header__middle">
+          <p>
+            Интернет-магазин <br>
+            строительных материалов <br>
+            и инструментов для ремонта
+          </p>
+          <div>
+            <div class="header__middle__phone">
+              <span>+7 (812) 555-05-55</span>
+            </div>
+            <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
+          </div>
+          <div>
+            <button type="button" class="btn"><img src="img/icon-login.svg" width="20" height="17" alt="Вход в личный кабинет">Войти</button>
+            <a href="#" class="link-btn">Регистрация</a>
+          </div>
+        </div>
+        <div class="header__menu">
+          <nav>
+            <ul>
+              <li><a href="index.html">Главная</a></li>
+              <li><a href="">Компания</a></li>
+              <li><a href="catalog.html">Каталог</a></li>
+              <li><a href="">Новости</a></li>
+              <li><a href="">Спецпредложения</a></li>
+              <li><a href="">Доставка</a></li>
+              <li><a href="">Контакты</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
+      
     </header>
 
     <main>
@@ -255,92 +259,98 @@
           </div>
         </div>
       </section>
-      <div class="columns-2">
-        <section class="about">
-          <h2>Компания «Техномарт»</h2>
-          <p>
-            Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта<br>
-             и строительства не оставит равнодушными любителей сэкономить на гастарбайтерах.
-          </p>
-          <p>
-            Мы можем доставить ваш товар в самые отдаленные точки России!<br>
-            Техномарт работает со многими транспортными компаниями: 
-          </p>
-          <ul>
-            <li>Деловые линии</li>
-            <li>Автотрейдинг</li>
-            <li>ЖелДорЭкспедиция</li>
-          </ul>
-          <a href="#" class="btn-link-red">Подробнее о компании</a>
-        </section>
-        <seciton class="contacts">
-          <h2>Контакты</h2>
-          <p>Вы можете забрать товар сами, <br>
-              заехав в наш офис:
-          </p>
-          <button type="button" class="btn-map"><img src="img/min-map.png" width="300" height="158" alt="Как проехать до нашего офиса"></button>
-          <br>
-          <button type="button" class="btn-red">Заблудились? Напишите нам!</button>
-        </seciton>
+      <div class="columns-2__wrapper">
+        <div class="columns-2">
+          <section class="about">
+            <h2>Компания «Техномарт»</h2>
+            <p>
+              Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта<br>
+              и строительства не оставит равнодушными любителей сэкономить на гастарбайтерах.
+            </p>
+            <p>
+              Мы можем доставить ваш товар в самые отдаленные точки России!<br>
+              Техномарт работает со многими транспортными компаниями: 
+            </p>
+            <ul>
+              <li>Деловые линии</li>
+              <li>Автотрейдинг</li>
+              <li>ЖелДорЭкспедиция</li>
+            </ul>
+            <a href="#" class="btn-link-red">Подробнее о компании</a>
+          </section>
+          <seciton class="contacts">
+            <h2>Контакты</h2>
+            <p>Вы можете забрать товар сами, <br>
+                заехав в наш офис:
+            </p>
+            <button type="button" class="btn-map"><img src="img/min-map.png" width="300" height="158" alt="Как проехать до нашего офиса"></button>
+            <br>
+            <button type="button" class="btn-red">Заблудились? Напишите нам!</button>
+          </seciton>
+        </div>
       </div>
     </main>
     
     <footer class="footer">
-      <div class="footer__upper">
-        <div class="footer__upper__logo">
-          <a href="#">
-            <img src="img/logo.png" alt="Техномарт">
-          </a>
+      <div class="footer_wrapper">
+        <div class="footer__upper">
+          <div>
+            <a href="#">
+              <div class="footer__upper__logo"></div>
+            </a>
+          </div>
+          <ul>
+            <li><a href="">Компания</a></li>
+            <li><a href="">Новости</a></li>
+            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="">Доставка</a></li>
+            <li><a href="">Контакты</a></li>
+          </ul>
         </div>
-        <ul>
-          <li><a href="">Компания</a></li>
-          <li><a href="">Новости</a></li>
-          <li><a href="catalog.html">Каталог</a></li>
-          <li><a href="">Доставка</a></li>
-          <li><a href="">Контакты</a></li>
-        </ul>
-      </div>
-      <div class="footer__bottom">
-        <ul>
-          <li><a href="">Материалы</a></li>
-          <li><a href="">Техника</a></li>
-          <li><a href="">Инструмент</a></li>
-          <li><a href="">Спецпредложения</a></li>
-        </ul>
-        <p>
-          г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>
-          +7 (812) 555-05-55
-        </p>
-      </div>
-      <div class="footer__original">
-        <p>
-          © 2010–2020 Компания «Техномарт»<br>
-          Все права защищены
-        </p>
-        <div class="footer__original__socials">
-          <a href="https://vk.com/" target="_blank">
-            <div class="footer__original__socials__icon icon-vk">
-              
-            </div>
-          </a>
-          <a href="https://fb.com/" target="_blank">
-            <div class="footer__original__socials__icon icon-fb">
-            </div>
-          </a>
-          <a href="https://instagram.com/" target="_blank">
-            <div class="footer__original__socials__icon icon-ig">
-            </div>
-          </a>
+        <div class="footer__bottom">
+          <ul>
+            <li><a href="">Материалы</a></li>
+            <li><a href="">Техника</a></li>
+            <li><a href="">Инструмент</a></li>
+            <li><a href="">Спецпредложения</a></li>
+          </ul>
+          <p>
+            г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>
+            +7 (812) 555-05-55
+          </p>
         </div>
-        <div class="footer__original__developer">
+      </div>
+      <div class="footer__original__wrapper">
+        <div class="footer__original">
           <p>
-            Обратная связь:<br>
-            <span>mail@htmlacademy.ru</span>
+            © 2010–2020 Компания «Техномарт»<br>
+            Все права защищены
           </p>
-          <p>
-            Разработано —<br>
-            <a href="https://htmlacademy.ru/intensive/htmlcss" target="_blank"><span>htmlacademy.ru</span></a>
-          </p>
+          <div class="footer__original__socials">
+            <a href="https://vk.com/" target="_blank">
+              <div class="footer__original__socials__icon icon-vk">
+                
+              </div>
+            </a>
+            <a href="https://fb.com/" target="_blank">
+              <div class="footer__original__socials__icon icon-fb">
+              </div>
+            </a>
+            <a href="https://instagram.com/" target="_blank">
+              <div class="footer__original__socials__icon icon-ig">
+              </div>
+            </a>
+          </div>
+          <div class="footer__original__developer">
+            <p>
+              Обратная связь:<br>
+              <span>mail@htmlacademy.ru</span>
+            </p>
+            <p>
+              Разработано —<br>
+              <a href="https://htmlacademy.ru/intensive/htmlcss" target="_blank"><span>htmlacademy.ru</span></a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
