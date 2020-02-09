@@ -10,10 +10,27 @@ html {
 
 body {
     font-family: 'Cuprum', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    font-family: 'Cuprum', sans-serif;
 }
 
 img { max-width: 100% }
 a { text-decoration: none }
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
 
 /* Обертка для центровки верхнего меню */
 .header__upper__outer {
@@ -65,7 +82,7 @@ a { text-decoration: none }
     box-shadow: 0px 5px 0px #b52933;
 }
 
-.header__upper__logo:hover {
+.header__upper__logo:hover {    
     background-color: #ca2c37;
     box-shadow: 0px 5px 0px #9a212a;
 }
@@ -73,6 +90,14 @@ a { text-decoration: none }
 .header__upper__logo:active {
     background-color: #ba2732;
     box-shadow: 0px 5px 0px #8e1e26;
+}
+
+.header__link__btn-logo {
+    display: block;
+    width: 100%;
+    height: 100%        ;
+    text-align: center;
+    line-height: 42px;
 }
 
 /* Поле поиска */
@@ -122,7 +147,6 @@ input[type=search] {
     height: 42px;
     text-align: center;
     line-height: 42px;
-
 }
 
 /* Кнопка "Закладки" */
@@ -132,7 +156,8 @@ input[type=search] {
     padding-left: 20px;
 }
 
-.header__link__btn-bookmarks:hover {
+.header__link__btn-bookmarks:hover,
+.header__link__btn-bookmarks:focus {
     background-color: #212a3a;
 }
 
@@ -162,7 +187,8 @@ input[type=search] {
     padding-left: 20px;
 }
 
-.header__link__btn-cart:hover {
+.header__link__btn-cart:hover,
+.header__link__btn-cart:focus {
     background-color: #212a3a;
 }
 
@@ -185,12 +211,17 @@ input[type=search] {
     opacity: 0.3;
 }
 
+.header__link__btn-cart-active {
+    background-color: #ee3643;
+}
+
 /* Кнопка "Оформить заказ" */
 .header__link__btn-order {
     background-color: #63a63e;
 }
 
-.header__link__btn-order:hover {
+.header__link__btn-order:hover,
+.header__link__btn-order:focus {
     background-color: #5fbb2d;
 }
 
@@ -229,15 +260,16 @@ input[type=search] {
 .header__middle .wrapper {
     margin-left: 20px;
 }
+
 /* Блок с телефоном */
 .header__middle__phone {
     width: 270px;
     height: 45px;
-    padding: 12px 45px 13px 75px;
     font-size: 21px;
     color: #ee3643;
     outline:3px solid #fff;
     text-align: center;
+    line-height: 45px;
     background-image: url(/img/icon-phone.svg);
     background-position:  5% 50%;
     background-repeat: no-repeat;
@@ -253,6 +285,7 @@ input[type=search] {
 
 .header__middle__wrapper {
     display: flex;
+    width: 300px;
 }
 
 /* Кнопка "Войти" */
@@ -271,6 +304,15 @@ input[type=search] {
     cursor: pointer;
 }
 
+.header__middle .btn:hover,
+.header__middle .btn:focus {
+    color: #ee3643;
+}
+
+.header__middle .btn:active {
+    color: rgba(0,0,0,0.3);
+}
+
 /* Кнопка "Регистрация */
 .header__middle .link-btn {
     display: block;
@@ -285,66 +327,96 @@ input[type=search] {
     background: #fff;
 }
 
+.header__middle .link-btn:hover,
+.header__middle .link-btn:focus {
+    color: #ee3643;
+}
+
+.header__middle .link-btn:active {
+    color: rgba(0,0,0,0.3);
+}
+
 /* Основное меню */
 .header__menu ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width: 940px;
     height: 60px;
     margin: 0 auto;
+    padding: 0;
     background: #32425c;
-    padding-left: 55px;
-    padding-right: 55px;
     list-style: none;
     box-shadow: inset 0px -5px 0px #293449;
 }
 
+/* Растягиваем пункты меню */
+.header__menu li {
+    flex-grow: 1;
+}
 
+/* ОТКУДА ПОЯВЛЯЕТСЯ ОДИН ПИКСЕЛЬ СЛЕВА В СОСТОЯНИИ ХОВЕР? */
+.header__menu li:hover,
+.header__menu a:focus {
+    background: #293449;
+}
+
+.header__menu li:active a {
+    background-color: #1d2739;
+    color: rgba(255,255,255,0.5);
+}
+
+/* Ссылка внутри пунктов меню */
 .header__menu a {
     color: #fff;
     display: block;
-    padding: 21px 10px;
+    text-align: center;
+    line-height: 60px;
+    vertical-align: middle;
 }
 
-.header__menu a:hover {
-    background: #000;
-    padding: 21px 10px;
-}
 
-.columns-2__wrapper {
+
+/* "О компании" */
+
+/* Обертка для центровки блока */
+.columns-2__outer {
     width: 100%;
     min-height: 500px;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 50px;
+    padding-bottom: 85px;
 }
 
+/* Делим секцию на половину экрана */
 .columns-2 {
     display: flex;
     justify-content: center;
 }
 
 .about {
-    margin-right: 120px;
+    margin-right: 140px;
 }
+
 .about h2,
 .contacts h2 {
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 400;
     text-transform: uppercase;
 }
 
 .about p,
 .contacts p {
+    margin-top: 25px;
     font-family: 'PT Sans', sans-serif;
     font-size: 13px;
     line-height: 24px;
 }
 
 .contacts p {
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 }
 
+/* Список транспортных компаний */
 .about ul {
     font-size: 18px;
     line-height: 20px;
@@ -354,13 +426,15 @@ input[type=search] {
 }
 
 .about li {
+    position: relative;
     margin-bottom: 20px;
 }
 
+/* Красные полоски у пунктов списка */
 .about li::before {
     content: "";
     display: block;
-    position: relative;
+    position: absolute;
     left: -30px;
     top: 11px;
     width: 25px;
@@ -368,16 +442,19 @@ input[type=search] {
     background-color: #ee3643;
 }
 
+/* Ссылка "Подробнее о компании" и ссылка "Заблудились?..." */
 .btn-link-red,
 .btn-red {
     display: block;
     height: 38px;
+    font-size: 14px;
+    line-height: 38px;
     text-align: center;
-    background: #ee3643;
-    border-radius: 5px;
-    color: #fff;
     text-transform: uppercase;
+    background: #ee3643;
+    color: #fff;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
@@ -385,23 +462,27 @@ input[type=search] {
     width: 220px;
 }
 
-
 .btn-red {
     width: 300px;
 }
 
+/* Кнопка с картой */
 .btn-map {
     width: 300px;
     height: 160px;
     background: url('/img/min-map.png');
     border: none;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     cursor: pointer;
 }
 
-.footer_wrapper {
+
+
+/* Футер */
+
+/* Обертка для центровки блока */
+.footer__upper__outer {
     width: 100%;
-    min-height: 194px;
     background-color: #32425c;
 }
 
@@ -413,22 +494,31 @@ input[type=search] {
     background-color: #32425c;
 }
 
+/* Лого */
 .footer__upper__logo {
-    align-self: flex-start;
-    width: 220px;
-    height: 68px;
-    padding: 21px 42px 26px;
-    background-color: #ee3643;
-    background-image: url('/img/logo.png');
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    box-shadow: inset 0px -5px 0px #b52933;
+    height: 63px;
+    background-size: 140px;
 }
 
+/* Меню футера */
+
+.footer__upper ul {
+    margin: 0 0 20px 0;
+}
+
+/* Меню футера */
 .footer__upper ul,
 .footer__bottom ul {
     display: flex;
+    justify-content: flex-end;
     list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+
+.footer__upper ul {
+    margin-bottom: 35px;
 }
 
 .footer__upper li,
@@ -444,6 +534,16 @@ input[type=search] {
     color: #fff;
 }
 
+.footer a:hover,
+.footer a:focus {
+    text-decoration: underline;
+}
+
+.footer__upper a:active,
+.footer__bottom a:active{
+    opacity: 0.5;
+}
+
 .footer__bottom {
     display: flex;
     justify-content: space-between;
@@ -452,21 +552,31 @@ input[type=search] {
     background-color: #32425c;
 }
 
+/* Нижний отступ до footer__original */
+.footer__bottom li {
+    margin-bottom: 75px;
+}
+
 .footer__bottom a,
 .footer__original a {
     color: #ffd180;
 }
 
+/* Блок с адресом */
 .footer__bottom p {
+    margin-top: 0;
+    width: 334px;
     order: -1;
     color: #fff;
+    font-size: 18px;
+    line-height: 24px;
 }
 
-.footer__bottom li {
-    margin-bottom: 80px;
-}
 
-.footer__original__wrapper {
+/* Самый нижний футер */
+
+/* Обертка для центровки блока */
+.footer__original__outer {
     width: 100%;
     min-height: 107px;
     background-color: #293449;
@@ -482,16 +592,20 @@ input[type=search] {
     color: #fff;
 }
 
+/* Блок "Все права защищены" */
 .footer__original p {
     margin-top: 40px;
     margin-bottom: 40px;
 }
 
+/* Блок кнопок социальных сетей */
 .footer__original__socials {
     display: flex;
     justify-content: space-between;
+    margin-left: 40px;
 }
 
+/* Кнопки социальных сетей */
 .footer__original__socials__icon {
     background-color: #212a3a;
     background-position: 50% 50%;
@@ -500,6 +614,11 @@ input[type=search] {
     height: 42px;
     border-radius: 50%;
     margin-right: 5px;
+}
+
+.footer__original__socials__icon:hover,
+.footer__original__socials__icon:focus {
+    background-color: #ee3643;
 }
 
 .icon-vk {
@@ -514,10 +633,324 @@ input[type=search] {
     background-image: url(/img/insta-icon.svg);
 }
 
+/* Правый блок со ссылками */
 .footer__original__developer {
     display: flex;
+    justify-content: flex-end;
 }
 
-.footer__original__developer p:first-child {
-    margin-right: 54px;
+.footer__original__developer p {
+    margin-right: 30px;
+}
+
+.footer__original__developer a:active {
+    color: #ee3643;
+}
+
+
+/* catalog.html */
+
+/* Кнопка выхода из личного кабинета */
+.btn-logout {
+    display: block;
+    width: 300px;
+    height: 45px;
+    margin-bottom: 5px;
+    background-color: #fff;
+    background-image: url(/img/icon-user.svg),
+                      url('/img/icon-logout.svg');
+    background-position:  5% 50%,
+                          95% 50%;
+    background-repeat: no-repeat, 
+                       no-repeat;
+    border: none;
+    text-align: left;
+    padding-left: 48px;
+    font-size: 21px;
+    cursor: pointer;
+}
+
+.btn-logout:hover,
+.btn-logout:focus {
+
+}
+
+.btn-logout:active {
+    color: rgba(0,0,0,0.3);
+}
+
+/* Ссылки под кнопкой выхода из личного кабинета */
+
+.header__middle__wrapper-catalog ul {
+    padding-left: 18px;
+    margin: 0;
+}
+.header__middle__wrapper-catalog li:first-child {
+    list-style: none;
+}
+
+.header__middle__wrapper-catalog li:nth-child(2) {
+    font-size: 5px;
+    padding: 0 10px;
+    vertical-align: middle;
+}
+
+.header__middle__wrapper-catalog li {
+    display: inline-block;
+}
+
+.header__middle__wrapper-catalog a {
+    text-decoration: underline;
+}
+
+.header__middle__wrapper-catalog a:hover,
+.header__middle__wrapper-catalog a:focus {
+    color: #ee3643;
+}
+
+/* Заголовок */
+.crumps h1 {
+    width: 940px;
+    height: 90px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #32425c;
+    background: #f2f6f8;
+    font-size: 30px;
+    line-height: 90px;
+    padding-left: 30px;
+    font-weight: 400;
+}
+
+/* Ссылки "хлебные крошки" */
+.crumps {
+    width: 940px;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+
+.crumps ul {
+    margin: 25px 0 20px;
+    padding: 0;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    list-style: none;
+}
+
+.crumps li {
+    display: inline-block;
+    padding-right: 40px;
+    position: relative;
+}
+
+/* Стрелочки сбоку элемента списка*/
+.crumps a::after {
+    position: absolute;
+    content: "";
+    top: 2px;
+    right: 15px;
+    width: 8px;
+    height: 12px;
+    background-image: url('/img/icon-right-arrow-small.svg');
+    background-position: 50% 50%;
+    background-repeat: no-repeat; 
+}
+
+/* Секция с фильтрами и карточками товаров */
+.filters-and-goods__inner {
+    margin: 0 auto;
+    width: 940px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Колонка с фильтрами */
+.filters {
+    width: 220px;
+    font-family: 'PT Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+.filters h2 {
+    background-color: #f7f3ec;
+    width: 220px;
+    height: 38px;
+    padding-left: 20px;
+    line-height: 38px;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.filters h3 {
+    font-size: 17px;
+}
+
+/* Белая кнопка */
+.btn-white {
+    height: 38px;
+    background-color: #fff;
+    border: solid 1px #e5e5e5;
+    border-radius: 2px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn-white-filter {
+    width: 140px;
+}
+
+.filters hr {
+    border: 1px solid #e5e5e5;
+}
+
+/* Правый-блок с товарами и сортировкой товаров */
+.goods {
+    width: 700px;
+    margin-top: 10px;
+}
+
+/* Блок сортировки товаров */
+.goods__sorting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 38px;
+    padding: 0 20px;
+    background-color: #f7f3ec;
+    border-radius: 2px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+/* Заголовок "Сортировка" */
+.goods__sorting h3 {
+    font-weight: 400;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-right: 100px;
+}
+
+/* Блок с кнопками сортировки */
+.goods__sorting_buttons  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    flex-grow: 1;
+}
+
+/* Стрелки сортировки */
+.goods__sorting__arrows {
+    list-style: none;
+}
+
+.goods__sorting__arrows li {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+/* Блок с карточками товаров */
+.goods__cards {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    flex-wrap: wrap;
+    font-family: 'PT Sans', sans-serif;
+    list-style: none;
+}
+
+/* Карточка товара */
+.goods__cards__item {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    width: 220px;
+    height: 318px;
+    margin-bottom: 20px;
+    outline: solid 1px #e5e5e5;
+}
+
+/* Название товара */
+.goods__cards__item h3 {
+    font-size: 18px;
+    text-align: center;
+    line-height: 20px;
+    padding: 0 30px;
+    margin: 10px auto 10px;
+}
+
+/* Цена без скидки */
+.goods__cards__item span {
+    font-size: 17px;
+    font-weight: 700;
+    color: #999999;
+    text-decoration: line-through;
+}
+
+/* Ссылка с ценой со скидкой */
+.goods__cards__item a {
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    width: 141px;
+    height: 38px;
+    background-image: url('/img/btn-red-price.svg');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    color: #fff;
+    text-align: center;
+    line-height: 38px;
+    font-weight: 700;
+    border-radius: 2px;
+    margin-top: 10px;
+}
+
+/* Кнопки страниц каталога */
+
+.goods__pages {
+    padding: 0;
+    margin: 32px 0 60px;
+    list-style: none;
+}
+
+.goods__pages li {
+    display: inline-block;
+}
+
+/* Кнопка страницы с цифрой */
+.btn-white-number {
+    width: 38px;
+    margin-right: 10px;
+}
+
+.btn-white-number-active {
+    background-color: #ee3643;
+    color: #fff;
+}
+
+/* Секция "Информация о категории товаров" */
+.info__outer {
+    background-color: #f2f6f8;
+}
+
+.info h2 {
+    font-family: 'Cuprum', sans-serif;
+    text-transform: uppercase;
+    font-size: 30px;
+    margin: 0 0 20px;
+}
+.info {
+    width: 940px;
+    margin: 0 auto;
+    padding: 65px 0 55px;
+}
+
+.info p {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    line-height: 24px;
 }

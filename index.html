@@ -8,13 +8,14 @@
     <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700&display=swap&subset=cyrillic" rel="stylesheet">
   </head>
   <body>
-    <!-- 10. Личный проект: завершаем разметку -->
+    <!-- 15. Личный проект: начинаем строить сетку на флексах -->
     <header class="header">
       <div class="header__upper__outer">
         <section class="header__upper">
           <div class="wrapper-left">
-            <div class="header__upper__logo">
-            </div>
+            <a href="index.html" class="header__link__btn-logo">
+              <div class="header__upper__logo"></div>
+            </a>
             <div class="header__upper__search">
               <form action="https://echo.htmlacademy.ru" method="post">
                 <input type="search" name="search" id="search-field" placeholder="Перфоратор">
@@ -73,7 +74,6 @@
           </nav>
         </div>
       </div>
-      
     </header>
 
     <main>
@@ -263,7 +263,7 @@
           </div>
         </div>
       </section>
-      <div class="columns-2__wrapper">
+      <div class="columns-2__outer">
         <div class="columns-2">
           <section class="about">
             <h2>Компания «Техномарт»</h2>
@@ -296,11 +296,11 @@
     </main>
     
     <footer class="footer">
-      <div class="footer_wrapper">
+      <div class="footer__upper__outer">
         <div class="footer__upper">
           <div>
-            <a href="#">
-              <div class="footer__upper__logo"></div>
+            <a href="index.html">
+              <div class="header__upper__logo footer__upper__logo"></div>
             </a>
           </div>
           <ul>
@@ -324,7 +324,7 @@
           </p>
         </div>
       </div>
-      <div class="footer__original__wrapper">
+      <div class="footer__original__outer">
         <div class="footer__original">
           <p>
             © 2010–2020 Компания «Техномарт»<br>
@@ -348,7 +348,7 @@
           <div class="footer__original__developer">
             <p>
               Обратная связь:<br>
-              <span>mail@htmlacademy.ru</span>
+              <a href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
             </p>
             <p>
               Разработано —<br>
