@@ -15,17 +15,17 @@ body {
 img { max-width: 100% }
 a { text-decoration: none }
 
-
-.header__upper__wrapper {
+/* Обертка для центровки верхнего меню */
+.header__upper__outer {
     background: #293449;
     width: 100%;
     height: 100%;
 }
 
+/* Верхнее меню */
 .header__upper {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: 940px;
     height: 42px;
     margin: 0 auto;
@@ -38,6 +38,20 @@ a { text-decoration: none }
     color: #fff;
 }
 
+/* Обертка логотипа и поля поиска */
+.wrapper-left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Обертка кнопок "Закладки", "Корзина", "Оформить заказ" */
+.wrapper-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Логотип */
 .header__upper__logo {
     width: 220px;
     height: 42px;
@@ -61,16 +75,28 @@ a { text-decoration: none }
     box-shadow: 0px 5px 0px #8e1e26;
 }
 
-
-.header__upper-search {
-
+/* Поле поиска */
+.header__upper__search {
+    min-width: 286px;
+    line-height: 42px;
+    vertical-align: middle;
 }
 
-.header__link-btn-search {
+.header__upper__search label {
+    padding-left: 40px;
+}
+
+input[type=search] {
+    margin-left: 15px;
+    width: 100%;
+    display: none;
+}
+
+.header__upper__search {
     position: relative;
 }
 
-.header__link-btn-search::before {
+.header__upper__search::before {
     content : "";
     display: block;
     position: absolute;
@@ -84,24 +110,38 @@ a { text-decoration: none }
     opacity: 0.3;
 }
 
+/* ПОЧЕМУ НЕ РАБОТАЕТ? */
+/* .header__upper__search:hover .header__upper__search::before {
+    opacity: 1;
+} */
 
-
-/* Устанавливаем размер и центровку текста внутри кнопок меню */
-.header__link-btn {
+/* Общие стили для правых кнопок в header-upper */
+.header__link__btn {
     display: block;
-    width: 150px;
+    width: 145px;
     height: 42px;
     text-align: center;
     line-height: 42px;
+
 }
 
-/* Добавляем иконку кнопке меню */
-.header__link-btn-bookmarks {
+/* Кнопка "Закладки" */
+.header__link__btn-bookmarks {
     position: relative;
+    background-color: #293449;
+    padding-left: 20px;
 }
 
-/* Добавляем иконку */
-.header__link-btn-bookmarks::before {
+.header__link__btn-bookmarks:hover {
+    background-color: #212a3a;
+}
+
+.header__link__btn-bookmarks:active {
+    opacity: 0.6;
+}
+
+/* Иконка "Закладки" */
+.header__link__btn-bookmarks::before {
     content : "";
     display: block;
     position: absolute;
@@ -110,18 +150,28 @@ a { text-decoration: none }
     top: 0;
     left: 0;
     background-image: url('/img/icon-bookmark.svg');
-    background-position: 5% 50%;
+    background-position: 15% 50%;
     background-repeat: no-repeat;
     opacity: 0.3;
 }
 
-/* Добавляем иконку кнопке меню */
-.header__link-btn-cart {
+/* Кнопка "Корзина" */
+.header__link__btn-cart {
     position: relative;
+    background-color: #293449;
+    padding-left: 20px;
 }
 
-/* Добавляем иконку */
-.header__link-btn-cart::before {
+.header__link__btn-cart:hover {
+    background-color: #212a3a;
+}
+
+.header__link__btn-cart:active {
+    opacity: 0.6;
+}
+
+/* Иконка "Корзина" */
+.header__link__btn-cart::before {
     content : "";
     display: block;
     position: absolute;
@@ -130,34 +180,32 @@ a { text-decoration: none }
     top: 0;
     left: 0;
     background-image: url('/img/icon-cart.svg');
-    background-position: 5% 50%;
+    background-position: 15% 50%;
     background-repeat: no-repeat;
     opacity: 0.3;
 }
 
-.header__link-btn-blue {
-    background-color: #293449;
-}
-
-.header__link-btn-green {
+/* Кнопка "Оформить заказ" */
+.header__link__btn-order {
     background-color: #63a63e;
 }
 
-.header__link-btn-green:hover {
+.header__link__btn-order:hover {
     background-color: #5fbb2d;
 }
 
-.header__link-btn-green:active {
-    background-color: #518534;
+.header__link__btn-order:active {
+    opacity: 0.6;
 }
 
-
-.header__middle_wrapper {
+/* Обертка среднего раздела хедера */
+.header__middle__outer {
     width: 100%;
     height: 278px;
     background: #f4f7f9;
 }
 
+/* Средний раздел хедера */
 .header__middle {
     display: flex;
     justify-content: space-between;
@@ -165,59 +213,79 @@ a { text-decoration: none }
     width: 940px;
     margin: 0 auto;
     padding-top: 45px;
-    padding-bottom: 35px;
+    padding-bottom: 25px;
 }
 
-.header__middle__phone + p {
-    color: #32425c;
-}
-
+/* Блок описания магазина */
 .header__middle p:first-child {
     font-style: italic;
     font-size: 16px;
     line-height: 23px;
     color: #ee3643;
-    margin-top: 0;
+    margin-top: 5px;
     margin-left: 50px;
 }
 
+.header__middle .wrapper {
+    margin-left: 20px;
+}
+/* Блок с телефоном */
 .header__middle__phone {
-    padding: 10px;
+    width: 270px;
+    height: 45px;
+    padding: 12px 45px 13px 75px;
     font-size: 21px;
     color: #ee3643;
-    border: 3px solid #fff;
+    outline:3px solid #fff;
     text-align: center;
-    background: url(/img/icon-phone.svg) 5% 50% no-repeat;
+    background-image: url(/img/icon-phone.svg);
+    background-position:  5% 50%;
+    background-repeat: no-repeat;
 }
 
-.header__middle p:nth-of-type(2) {
-    font-size: 14px;
-    line-height: 24px;
+/* Блок с адресом */
+.header__middle__phone + p {
     color: #32425c;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
 }
 
+.header__middle__wrapper {
+    display: flex;
+}
+
+/* Кнопка "Войти" */
 .header__middle .btn {
-    padding: 15px 25px;
-    background: #fff;
+    width: 120px;
+    height: 45px;
+    margin-right: 10px;
+    padding-left: 30px;
+    background-color: #fff;
+    background-image: url(/img/icon-login.svg);
+    background-position:  15% 50%;
+    background-repeat: no-repeat;
     border: none;
     font-size: 21px;
-    margin-right: 10px;
+    text-align: center;
     cursor: pointer;
 }
 
-.btn img {
-    margin-right: 15px;
-}
-
+/* Кнопка "Регистрация */
 .header__middle .link-btn {
-    padding: 15px 25px;
+    display: block;
+    width: 150px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    vertical-align: middle;
     border: none;
     font-size: 21px;
     color: #000;
     background: #fff;
 }
 
-
+/* Основное меню */
 .header__menu ul {
     display: flex;
     justify-content: space-between;
