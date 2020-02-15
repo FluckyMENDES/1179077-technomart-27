@@ -76,6 +76,7 @@ a {
 
 /* Логотип */
 .header__upper__logo {
+    display: block;
     width: 220px;
     height: 42px;
     line-height: 42px;
@@ -87,9 +88,11 @@ a {
     background-repeat: no-repeat;
     background-size: 109px;
     box-shadow: 0px 5px 0px #b52933;
+    outline: none;
 }
 
-.header__upper__logo:hover {    
+.header__upper__logo:hover,
+.header__upper__logo:focus {    
     background-color: #ca2c37;
     box-shadow: 0px 5px 0px #9a212a;
 }
@@ -99,13 +102,6 @@ a {
     box-shadow: 0px 5px 0px #8e1e26;
 }
 
-.header__link__btn-logo {
-    display: block;
-    width: 100%;
-    height: 100%        ;
-    text-align: center;
-    line-height: 42px;
-}
 
 /* Поле поиска */
 .header__upper__search {
@@ -114,44 +110,119 @@ a {
     vertical-align: middle;
 }
 
+/* Лейбл "Поиск" */
 .header__upper__search label {
-    padding-left: 40px;
+    position: absolute;
+    display: block;
+    padding-left: 50px;
+    width: 100%;
+    height: 100%;
+    top: 1px;
+    left: 0;
+    font-size: 17px;
 }
 
+/* Стилизация инпута */
 .header__upper__search input[type=search] {
+    position: relative;
+    padding-left: 50px;
     width: 100%;
+    height: 42px;
+    line-height: 42px;
     border: none;
     background-color: transparent;
-    padding-left: 40px;
+    font-family: 'Cuprum', sans-serif;
+    font-size: 17px;
     color: #fff;
+    outline: none;
 }
 
-/* input[type=search] + label {
-    ДОВЕРСТАТЬ
-} */
+/* Стилизация плейсхолдера */
+.header__upper__search input[type=search]::-webkit-input-placeholder {
+    color: #000;
+    opacity: 0;
+}
+
+.header__upper__search input[type=search]:focus::-webkit-input-placeholder,
+.header__upper__search input[type=search]:active::-webkit-input-placeholder {
+    opacity: 1;
+}
+
+
+.header__upper__search input[type=search]:-moz-placeholder {
+    color: #000;
+    opacity: 0;
+}
+
+.header__upper__search input[type=search]:focus:-moz-placeholder,
+.header__upper__search input[type=search]:active:-moz-placeholder {
+    opacity: 1;
+}
+
+.header__upper__search input[type=search]::-moz-placeholder {
+    color: #000;
+    opacity: 0;
+}
+
+.header__upper__search input[type=search]:focus::-moz-placeholder,
+.header__upper__search input[type=search]:active::-moz-placeholder {
+    opacity: 1;
+}
+
+.header__upper__search input[type=search]:-ms-input-placeholder {
+    color: #000;
+    opacity: 0;
+}
+
+.header__upper__search input[type=search]:focus:-ms-input-placeholder,
+.header__upper__search input[type=search]:active:-ms-input-placeholder {
+    opacity: 1;
+}
+
+/* Затемнение при ховере */
+.header__upper__search input[type=search]:hover {
+    background-color: #212a3a;
+}
+
+/* Добавление красной иконки поиска при фокусе */
+.header__upper__search input[type=search]:active,
+.header__upper__search input[type=search]:focus {
+    background-color: #fff;
+    color: #000;
+    background-image: url('../img/icon-search-red.svg');
+    background-position: 16px 11px;
+    background-repeat: no-repeat;
+}
+
+/* Убираем лейбл "Поиск" при фокусе */
+.header__upper__search input[type=search]:focus + label,
+.header__upper__search input[type=search]:active + label {
+    opacity: 0;
+}
 
 .header__upper__search {
     position: relative;
 }
 
-.header__upper__search::before {
+/* Иконка поиска */
+input[type=search] + label::before {
     content : "";
     display: block;
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+    width: 17px;
+    height: 17px;
+    top: 11px;
+    left: 16px;
     background-image: url('/img/icon-search.svg');
-    background-position: 5% 50%;
+    background-position: 50% 50%;
     background-repeat: no-repeat;
     opacity: 0.3;
 }
 
-/* ПОЧЕМУ НЕ РАБОТАЕТ? */
-/* .header__upper__search:hover .header__upper__search::before {
+input[type=search] + label:hover::before {
     opacity: 1;
-} */
+}
+
 
 /* Общие стили для правых кнопок в header-upper */
 .header__link__btn {
@@ -167,6 +238,7 @@ a {
     position: relative;
     background-color: #293449;
     padding-left: 20px;
+    outline: none;
 }
 
 .header__link__btn-bookmarks:hover,
@@ -179,7 +251,6 @@ a {
 }
 
 /* Иконка "Закладки" */
-
 .header__link__btn-bookmarks::before {
     position: absolute;
     content: "";
@@ -201,6 +272,7 @@ a {
     position: relative;
     background-color: #293449;
     padding-left: 20px;
+    outline: none;
 }
 
 .header__link__btn-cart:hover,
@@ -233,9 +305,15 @@ a {
     background-color: #ee3643;
 }
 
+.header__link__btn-cart-active:hover,
+.header__link__btn-cart-active:focus {
+    background-color: #ca2c37;
+}
+
 /* Кнопка "Оформить заказ" */
 .header__link__btn-order {
     background-color: #63a63e;
+    outline: none;
 }
 
 .header__link__btn-order:hover,
@@ -300,6 +378,10 @@ a {
     outline:3px solid #fff;
 }
 
+.header__middle__phone a {
+    color: #ee3643;
+}
+
 /* Иконка телефона */
 .header__middle__phone::before {
     position: absolute;
@@ -340,10 +422,10 @@ a {
     font-size: 21px;
     text-align: center;
     cursor: pointer;
+    outline: none;
 }
 
 /* Иконка "Войти"  */
-
 .header__middle__wrapper .btn::before {
     position: absolute;
     content: "";
@@ -385,6 +467,7 @@ a {
     font-size: 21px;
     color: #000;
     background: #fff;
+    outline: none;
 }
 
 .header__middle .link-btn:hover,
@@ -406,7 +489,6 @@ a {
     height: 60px;
     margin: 0 auto;
     padding: 0;
-    
 }
 
 /* Пункты меню */
@@ -435,6 +517,7 @@ a {
     text-align: center;
     line-height: 60px;
     vertical-align: middle;
+    outline: none;
 }
 
 
@@ -450,9 +533,9 @@ a {
     grid-template-columns: 300px 300px 300px;
     grid-template-rows: 123px 123px 123px;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
 
+/* Карточки категорий каталога */
 .catalog__card {
     position: relative;
     margin-bottom: 20px;
@@ -463,15 +546,20 @@ a {
     color: #fff;
 }
 
+/* Стилизация бейджа "New" */
 .catalog__card .flag {
     right: 0;
 }
+
+/* Заголовок каточки */
 .catalog__card h3 {
     margin: 0;
     margin-top: 20px;
     margin-left: 25px;
     font-size: 24px;
 }
+
+/* Ссылка */
 .catalog__card a {
     position: absolute;
     top: 60px;
@@ -487,6 +575,7 @@ a {
     color: #fff;
     background-color: rgba(0,0,0,0.1);
     border-radius: 3px;
+    outline: none;
 }
 
 .catalog__card a:hover,
@@ -703,17 +792,18 @@ a {
     border: 1px solid #e5e5e5;
     background-position: 50% 50%;
     background-repeat: no-repeat;
+    outline: none;
 }
 
 
 .brands__wrapper__item:hover,
 .brands__wrapper__item:focus {
     border: none;
-    box-shadow: 0 0 10px 5px rgba(41, 52, 73, 0.25);
+    box-shadow: 0 0 10px rgba(41, 52, 73, 0.25);
 }
 
 .brands__wrapper__item:active {
-    box-shadow: 0 0 10px 1px rgba(41, 52, 73, 1);
+    box-shadow: 0 0 10px rgba(41, 52, 73, 1);
     opacity: 0.3;
 }
 
@@ -824,6 +914,7 @@ a {
     border-left: none;
     border-right: none;
     cursor: pointer;
+    outline: none;
 }
 
 .features__bottom__buttons__btn:hover,
@@ -948,12 +1039,13 @@ a {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    outline: none;
 }
 
 .btn-link-red:hover,
 .btn-link-red:focus,
 .btn-red:hover,
-.btn-red:hover {
+.btn-red:focus {
     background-color: #ca2c37;
 }
 
@@ -961,8 +1053,6 @@ a {
 .btn-red:active {
     background-color: #ba2732;
 }
-
-
 
 .btn-link-red {
     width: 220px;
@@ -1040,6 +1130,7 @@ a {
 
 .footer__upper a {
     color: #fff;
+    outline: none;
 }
 
 .footer a:hover,
@@ -1068,6 +1159,7 @@ a {
 .footer__bottom a,
 .footer__original a {
     color: #ffd180;
+    outline: none;
 }
 
 /* Блок с адресом */
@@ -1168,6 +1260,7 @@ a {
     padding-left: 48px;
     font-size: 21px;
     cursor: pointer;
+    outline: none;
 }
 
 .btn-logout::before {
@@ -1199,17 +1292,11 @@ a {
     opacity: 1;
 }
 
-.btn-logout:focus::before,
-.btn-logout:focus::after {
-    opacity: 0.3;
-}
-
 .btn-logout:active {
     color: rgba(0,0,0,0.3);
 }
 
 /* Ссылки под кнопкой выхода из личного кабинета */
-
 .header__middle__wrapper-catalog {
     width: 300px;
 }
@@ -1233,12 +1320,18 @@ a {
 }
 
 .header__middle__wrapper-catalog a {
+    color: #32425c;
     text-decoration: underline;
+    outline: none;
 }
 
 .header__middle__wrapper-catalog a:hover,
 .header__middle__wrapper-catalog a:focus {
     color: #ee3643;
+}
+
+.header__middle__wrapper-catalog a:active {
+    color: rgba(0,0,0,0.3);
 }
 
 /* Ссылки "хлебные крошки" */
@@ -1260,6 +1353,20 @@ a {
     display: inline-block;
     padding-right: 40px;
     position: relative;
+}
+
+.crumps a {
+    color: #32425c;
+    outline: none;
+}
+
+.crumps a:hover,
+.crumps a:focus {
+    color: #ee3643;
+}
+
+.crumps a:active {
+    color: rgba(0,0,0,0.3);
 }
 
 /* Заголовок */
@@ -1457,7 +1564,7 @@ a {
 
 /* Выбранный чекбокс */
 .check__input:checked + .check::before {
-    border-color: #b5b5b5;
+    border-color: #c5c5c5;
 }
 .check__input:checked + .check::after {
     content: "";
@@ -1467,28 +1574,29 @@ a {
     display: block;
     width: 20px;
     height: 10px;
-    border-left: 4px solid #b5b5b5;
-    border-bottom: 4px solid #b5b5b5;
+    border-left: 4px solid #c5c5c5;
+    border-bottom: 4px solid #c5c5c5;
     transform: rotate(-45deg);
 }
 
 /* Отключенный невыбранный чекбокс */
 .check__input:disabled + .check::before,
 .check__input:disabled + .check::after {
-    border-color: #b5b5b5;
+    border-color: #c5c5c5;
     opacity: 0.3;
 }
 
 /* Отключенный выбранный чекбокс */
 .check__input:checked:disabled + .check::before,
 .check__input:checked:disabled + .check::after {
-    border-color: #b5b5b5;
+    border-color: #c5c5c5;
     opacity: 0.3;
 }
 
 /* Фокус на чекбоксе */
 .check__input:focus + .check::before {
-    box-shadow: 0 0 1px 2px #9ecaed;
+    border-color: #b5b5b5;
+    /* box-shadow: 0 0 1px 2px #9ecaed; */
 }
 
 
@@ -1548,10 +1656,9 @@ a {
 
 /* Фокус на радиокнопке */
 .radio__input:focus + .radio::before {
-    box-shadow: 0 0 1px 2px #9ecaed;
+    border-color: #b5b5b5;
+    /* box-shadow: 0 0 1px 2px #9ecaed; */
 }
-
-
 
 
 /* Белая кнопка */
@@ -1564,6 +1671,7 @@ a {
     font-size: 13px;
     text-transform: uppercase;
     cursor: pointer;
+    outline: none;
 }
 
 .btn-white:hover,
@@ -1589,8 +1697,6 @@ a {
 /* Правый-блок с товарами и сортировкой товаров */
 .goods {
     width: 700px;
-    
-    
 }
 
 /* Блок сортировки товаров */
@@ -1618,7 +1724,7 @@ a {
 }
 
 /* Блок с кнопками сортировки */
-.goods__sorting_buttons  {
+.goods__sorting__buttons  {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1634,6 +1740,22 @@ a {
 .goods__sorting__arrows li {
     display: inline-block;
     margin-left: 15px;
+}
+
+.goods__sorting__buttons a {
+    color: rgba(0,0,0,0.3);
+    border-bottom: dotted 1px #ee3643;
+}
+
+.goods__sorting__buttons a:hover,
+.goods__sorting__buttons a:focus {
+    color: #000;
+    border-bottom-style: solid;
+}
+
+.goods__sorting__buttons a:active {
+    color: #ee3643;
+    border-bottom: none;
 }
 
 /* Блок с карточками товаров */
@@ -1661,6 +1783,10 @@ a {
     outline: solid 1px #e5e5e5;
 }
 
+.goods__cards__item:hover,
+.goods__cards__item:focus {
+    box-shadow: 0 0 10px rgba(41, 52, 73, 0.25);
+}
 /* .goods__cards__item:nth-child(3n) {
     margin-right: 0;
 } */
@@ -1715,6 +1841,7 @@ a {
     line-height: 18px;
     font-weight: normal;
     text-transform: uppercase;
+    outline: none;
 }
 
 .actions .item__buy {
@@ -1766,9 +1893,7 @@ a {
     opacity: 0.3;
 }
 
-
-
-/* Изображение товара */
+/* Блок с изображением товара */
 .goods__cards__item__image {
     width: 220px;
     height: 168px;
@@ -1821,6 +1946,7 @@ a {
     margin: 32px 0 60px;
     padding: 0;
     list-style: none;
+    outline: none;
 }
 
 .goods__pages li {
