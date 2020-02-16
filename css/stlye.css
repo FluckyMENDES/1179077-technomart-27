@@ -83,7 +83,7 @@ a {
     text-align: center;
     vertical-align: middle;
     background-color: #ee3643;
-    background-image: url('/img/logo-big.png');
+    background-image: url('../img/logo-big.png');
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: 109px;
@@ -213,7 +213,7 @@ input[type=search] + label::before {
     height: 17px;
     top: 11px;
     left: 16px;
-    background-image: url('/img/icon-search.svg');
+    background-image: url('../img/icon-search.svg');
     background-position: 50% 50%;
     background-repeat: no-repeat;
     opacity: 0.3;
@@ -970,8 +970,10 @@ input[type=search] + label:hover::before {
 
 /* Делим секцию на половину экрана */
 .columns-2 {
+    width: 940px;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     padding-top: 25px;
 }
 
@@ -1066,7 +1068,7 @@ input[type=search] + label:hover::before {
 .btn-map {
     width: 300px;
     height: 160px;
-    background: url('/img/min-map.png');
+    background: url('../img/min-map.png');
     border: none;
     margin-bottom: 40px;
     cursor: pointer;
@@ -1219,15 +1221,15 @@ input[type=search] + label:hover::before {
 }
 
 .icon-vk {
-    background-image: url(/img/icon-vk.svg);
+    background-image: url('../img/icon-vk.svg');
 }
 
 .icon-fb {
-    background-image: url(/img/icon-fb.svg);
+    background-image: url('../img/icon-fb.svg');
 }
 
 .icon-ig {
-    background-image: url(/img/icon-ig.svg);
+    background-image: url('../img/icon-ig.svg');
 }
 
 /* Правый блок со ссылками */
@@ -1392,7 +1394,7 @@ input[type=search] + label:hover::before {
     right: 15px;
     width: 8px;
     height: 12px;
-    background-image: url('/img/icon-right-arrow-small.svg');
+    background-image: url('../img/icon-right-arrow-small.svg');
     background-position: 50% 50%;
     background-repeat: no-repeat; 
 }
@@ -1474,7 +1476,7 @@ input[type=search] + label:hover::before {
     top: 30px;
     width: 20px;
     height: 22px;
-    background-image: url('/img/filter-button.svg');
+    background-image: url('../img/filter-button.svg');
     cursor: pointer;
 }
 
@@ -1804,7 +1806,7 @@ input[type=search] + label:hover::before {
 }
 
 .flag-new {
-    background: url('/img/new-flag.png') 50% 50% no-repeat;
+    background: url('../img/new-flag.png') 50% 50% no-repeat;
 }
 
 /* Появляющиеся при наведении кнопки на карточке товара */
