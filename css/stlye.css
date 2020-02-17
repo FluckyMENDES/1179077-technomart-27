@@ -78,10 +78,9 @@ a {
 .header__upper__logo {
     display: block;
     width: 220px;
-    height: 42px;
+    min-height: 42px;
     line-height: 42px;
     text-align: center;
-    vertical-align: middle;
     background-color: #ee3643;
     background-image: url('../img/logo-big.png');
     background-position: 50% 50%;
@@ -89,6 +88,7 @@ a {
     background-size: 109px;
     box-shadow: 0px 5px 0px #b52933;
     outline: none;
+    transition: ease 0.2s;
 }
 
 .header__upper__logo:hover,
@@ -127,8 +127,8 @@ a {
     position: relative;
     padding-left: 50px;
     width: 100%;
-    height: 42px;
-    line-height: 42px;
+    min-height: 42px;
+    line-height: 40px;
     border: none;
     background-color: transparent;
     font-family: 'Cuprum', sans-serif;
@@ -186,11 +186,11 @@ a {
 
 /* Добавление красной иконки поиска при фокусе */
 .header__upper__search input[type=search]:active,
-.header__upper__search input[type=search]:focus {
+.header__upper__search input[type=search]:focus  {
     background-color: #fff;
     color: #000;
     background-image: url('../img/icon-search-red.svg');
-    background-position: 16px 11px;
+    background-position: 16px 13px;
     background-repeat: no-repeat;
 }
 
@@ -211,26 +211,28 @@ input[type=search] + label::before {
     position: absolute;
     width: 17px;
     height: 17px;
-    top: 11px;
+    /* top: 11px; */
+    top: 50%;
     left: 16px;
     background-image: url('../img/icon-search.svg');
     background-position: 50% 50%;
     background-repeat: no-repeat;
     opacity: 0.3;
+    transform: translateY(-50%);
 }
 
 input[type=search] + label:hover::before {
     opacity: 1;
 }
 
-
 /* Общие стили для правых кнопок в header-upper */
 .header__link__btn {
     display: block;
     width: 145px;
-    height: 42px;
+    min-height: 42px;
     text-align: center;
     line-height: 42px;
+    transition: ease 0.2s;
 }
 
 /* Кнопка "Закладки" */
@@ -254,12 +256,14 @@ input[type=search] + label:hover::before {
 .header__link__btn-bookmarks::before {
     position: absolute;
     content: "";
-    top: 30%;
+    top: 50%;
     left: 20px;
     width: 15px;
     height: 15px;
     background: url('../img/icon-bookmark.svg') 50% 50% no-repeat;
     opacity: 0.3;
+    transform: translateY(-50%);
+    transition: ease 0.2s;
 }
 
 .header__link__btn-bookmarks:hover::before,
@@ -288,12 +292,14 @@ input[type=search] + label:hover::before {
 .header__link__btn-cart::before {
     position: absolute;
     content: "";
-    top: 30%;
+    top: 50%;
     left: 20px;
     width: 15px;
     height: 15px;
     background: url('../img/icon-cart.svg') 50% 50% no-repeat;
     opacity: 0.3;
+    transform: translateY(-50%);
+    transition: ease 0.2s;
 }
 
 .header__link__btn-cart:hover::before,
@@ -314,6 +320,7 @@ input[type=search] + label:hover::before {
 .header__link__btn-order {
     background-color: #63a63e;
     outline: none;
+    transition: ease 0.2s;
 }
 
 .header__link__btn-order:hover,
@@ -328,7 +335,7 @@ input[type=search] + label:hover::before {
 /* Обертка среднего раздела хедера */
 .header__middle__outer {
     width: 100%;
-    height: 278px;
+    min-height: 278px;
     background: #f4f7f9;
 }
 
@@ -370,7 +377,7 @@ input[type=search] + label:hover::before {
     margin-top: 3px;
     padding-left: 20px;
     width: 265px;
-    height: 40px;
+    min-height: 40px;
     font-size: 21px;
     text-align: center;
     line-height: 45px;
@@ -386,10 +393,11 @@ input[type=search] + label:hover::before {
 .header__middle__phone::before {
     position: absolute;
     content: "";
-    top: 11px;
+    top: 50%;
     left: 15px;
     width: 19px;
     height: 19px;
+    transform: translateY(-50%);
     background: url('../img/icon-phone.svg') 50% 50% no-repeat;
 }
 
@@ -414,7 +422,7 @@ input[type=search] + label:hover::before {
     display: inline-block;
     float: left;
     width: 120px;
-    height: 45px;
+    min-height: 45px;
     margin-right: 10px;
     padding-left: 30px;
     background-color: #fff;
@@ -423,18 +431,21 @@ input[type=search] + label:hover::before {
     text-align: center;
     cursor: pointer;
     outline: none;
+    transition: ease 0.2s;
 }
 
 /* Иконка "Войти"  */
 .header__middle__wrapper .btn::before {
     position: absolute;
     content: "";
-    top: 30%;
+    top: 50%;
     left: 15px;
     width: 20px;
     height: 17px;
     background: url('../img/icon-login.svg') 50% 50% no-repeat;
     opacity: 0.3;
+    transform: translateY(-50%);
+    transition: ease 0.2s;
 }
 
 .header__middle__wrapper .btn:hover::before,
@@ -458,7 +469,6 @@ input[type=search] + label:hover::before {
 /* Кнопка "Регистрация */
 .header__middle .link-btn {
     display: inline-block;;
-    float: right;
     width: 150px;
     height: 45px;
     text-align: center;
@@ -468,6 +478,7 @@ input[type=search] + label:hover::before {
     color: #000;
     background: #fff;
     outline: none;
+    transition: ease 0.2s;
 }
 
 .header__middle .link-btn:hover,
@@ -497,9 +508,9 @@ input[type=search] + label:hover::before {
     background: #32425c;
     list-style: none;
     box-shadow: inset 0px -5px 0px #293449;
+    transition: ease 0.2s;
 }
 
-/* ОТКУДА ПОЯВЛЯЕТСЯ ОДИН ПИКСЕЛЬ СЛЕВА В СОСТОЯНИИ ХОВЕР? */
 .header__menu li:hover,
 .header__menu a:focus {
     background: #293449;
@@ -516,7 +527,6 @@ input[type=search] + label:hover::before {
     display: block;
     text-align: center;
     line-height: 60px;
-    vertical-align: middle;
     outline: none;
 }
 
@@ -570,12 +580,12 @@ input[type=search] + label:hover::before {
     font-size: 14px;
     line-height: 38px;
     text-align: center;
-    vertical-align: middle;
     text-transform: uppercase;
     color: #fff;
     background-color: rgba(0,0,0,0.1);
     border-radius: 3px;
     outline: none;
+    transition: ease 0.2s;
 }
 
 .catalog__card a:hover,
@@ -594,11 +604,12 @@ input[type=search] + label:hover::before {
 .catalog__card-materials::after {
     position: absolute;
     content: "";
-    top: 30px;
+    top: 50%;
     right: 40px;
     width: 44px;
     height: 66px;
     background: url('../img/icon-1.svg') 50% 50% no-repeat;
+    transform: translateY(-50%);
 }
 
 .catalog__card-instrument {
@@ -608,11 +619,12 @@ input[type=search] + label:hover::before {
 .catalog__card-instrument::after {
     position: absolute;
     content: "";
-    top: 30px;
+    top: 50%;
     right: 30px;
     width: 75px;
     height: 61px;
     background: url('../img/icon-2.svg') 50% 50% no-repeat;
+    transform: translateY(-50%);
 }
 
 .catalog__card-technic {
@@ -622,11 +634,12 @@ input[type=search] + label:hover::before {
 .catalog__card-technic::after {
     position: absolute;
     content: "";
-    top: 30px;
+    top: 50%;
     right: 30px;
     width: 78px;
     height: 62px;
     background: url('../img/icon-3.svg') 50% 50% no-repeat;
+    transform: translateY(-50%);
 }
 
 .catalog__card-discount {
@@ -636,11 +649,12 @@ input[type=search] + label:hover::before {
 .catalog__card-discount::after {
     position: absolute;
     content: "";
-    top: 25px;
+    top: 50%;
     right: 45px;
     width: 59px;
     height: 72px;
     background: url('../img/icon-4.svg') 50% 50% no-repeat;
+    transform: translateY(-50%);
 }
 
 .catalog__card-delivery {
@@ -650,11 +664,12 @@ input[type=search] + label:hover::before {
 .catalog__card-delivery::after {
     position: absolute;
     content: "";
-    top: 35px;
+    top: 50%;
     right: 30px;
     width: 78px;
     height: 63px;
     background: url('../img/icon-5.svg') 50% 50% no-repeat;
+    transform: translateY(-50%);
 }
 
 /* Слайдер */
@@ -698,10 +713,11 @@ input[type=search] + label:hover::before {
 .catalog__slider__arrows__left {
     position: absolute;
     display: inline-block;
-    top: 43%;
+    top: 50%;
     left: 25px;
     width: 22px;
     height: 40px;
+    transform: translateY(-50%);
     background: url('../img/icon-arrow-left.svg');
 }
 
@@ -709,10 +725,11 @@ input[type=search] + label:hover::before {
 .catalog__slider__arrows__right {
     position: absolute;
     display: inline-block;
-    top: 43%;
+    top: 50%;
     right: 25px;
     width: 22px;
     height: 40px;
+    transform: translateY(-50%);
     background: url('../img/icon-arrow-right.svg');
 }
 
@@ -723,6 +740,96 @@ input[type=search] + label:hover::before {
     left: 25px;
 }
 
+/* Новый слайдер */
+.new-slider {
+    position: relative;
+    width: 620px;
+    margin: 20px auto;
+}
+
+.new-slider input {
+    display: none;
+}
+
+.new-slider-controls {
+    position: absolute;
+    z-index: 3;
+    bottom: 35px;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+}
+
+.new-slider-controls label {
+    display: inline-block;
+    margin: 0 3px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px 0 rgba(0,0,0,0.8);
+    border: 2px solid #fff;
+    background-color: #fff;
+    transition: background-color 0.2s;
+}
+
+#btn-1:checked ~ .new-slider-controls label[for="btn-1"] {
+    background-color: #ee3643;
+}
+
+#btn-2:checked ~ .new-slider-controls label[for="btn-2"] {
+    background-color: #ee3643;
+}
+
+#btn-1:checked ~ .new-slider-inner .new-slider-slides {
+    transform: translate(0);
+}
+
+#btn-2:checked ~ .new-slider-inner .new-slider-slides {
+    transform: translate(-620px);
+}
+
+.new-slider-inner {
+    overflow: hidden;
+}
+
+.new-slider-slides {
+
+    width: 200%;
+    color: #fff;
+    transition: transform 0.8s ease;
+}
+
+.new-slider__slide-1 {
+    position: relative;
+}
+
+.new-slider__slide-2 {
+    position: relative;
+}
+
+.new-slider-slides h2 {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    margin: 0;
+    font-size: 36px;
+    text-transform: uppercase;
+}
+
+.new-slider-slides p {
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    margin: 0;
+    font-size: 18px;
+}
+
+.new-slider-slides div {
+    float: left;
+    width: 620px;
+    height: 266px;
+}
 /* Секции - Популярные товары, Популярные производители */
 .popular {
     width: 940px;
@@ -793,6 +900,7 @@ input[type=search] + label:hover::before {
     background-position: 50% 50%;
     background-repeat: no-repeat;
     outline: none;
+    transition: ease 0.2s;
 }
 
 
@@ -915,6 +1023,7 @@ input[type=search] + label:hover::before {
     border-right: none;
     cursor: pointer;
     outline: none;
+    transition: ease 0.2s;
 }
 
 .features__bottom__buttons__btn:hover,
@@ -1042,6 +1151,7 @@ input[type=search] + label:hover::before {
     border-radius: 5px;
     cursor: pointer;
     outline: none;
+    transition: ease 0.2s;
 }
 
 .btn-link-red:hover,
@@ -1213,6 +1323,7 @@ input[type=search] + label:hover::before {
     height: 42px;
     border-radius: 50%;
     margin-right: 5px;
+    transition: ease 0.2s;
 }
 
 .footer__original__socials__icon:hover,
@@ -1263,28 +1374,35 @@ input[type=search] + label:hover::before {
     font-size: 21px;
     cursor: pointer;
     outline: none;
+    transition: ease 0.2s;
 }
 
+/* Иконка слева кнопки */
 .btn-logout::before {
     position: absolute;
     content: "";
-    top: 13px;
+    top: 50%;
     left: 15px;
     width: 20px;
     height: 18px;
     background: url('../img/icon-user.svg') 50% 50% no-repeat;
     opacity: 0.3;
+    transform: translateY(-50%);
+    transition: ease 0.2s;
 }
 
+/* Иконка справа кнопки */
 .btn-logout::after {
     position: absolute;
     content: "";
-    top: 15px;
+    top: 50%;
     right: 10px;
     width: 20px;
     height: 17px;
     background: url('../img/icon-logout.svg') 50% 50% no-repeat;
     opacity: 0.3;
+    transform: translateY(-50%);
+    transition: ease 0.2s;
 }
 
 .btn-logout:hover::before,
@@ -1674,6 +1792,7 @@ input[type=search] + label:hover::before {
     text-transform: uppercase;
     cursor: pointer;
     outline: none;
+    transition: ease 0.2s;
 }
 
 .btn-white:hover,
@@ -1747,6 +1866,7 @@ input[type=search] + label:hover::before {
 .goods__sorting__buttons a {
     color: rgba(0,0,0,0.3);
     border-bottom: dotted 1px #ee3643;
+    transition: ease 0.2s;
 }
 
 .goods__sorting__buttons a:hover,
@@ -1783,6 +1903,7 @@ input[type=search] + label:hover::before {
     font-weight: bold;
     line-height: 20px;
     outline: solid 1px #e5e5e5;
+    transition: ease 0.2s;
 }
 
 .goods__cards__item:hover,
@@ -1844,6 +1965,7 @@ input[type=search] + label:hover::before {
     font-weight: normal;
     text-transform: uppercase;
     outline: none;
+    transition: ease 0.2s;
 }
 
 .actions .item__buy {
@@ -1862,6 +1984,7 @@ input[type=search] + label:hover::before {
     height: 15px;
     background: url('../img/icon-cart.svg') 50% 50% no-repeat;
     opacity: 0.3;
+    transition: ease 0.2s;
 }
 
 .item__buy:hover::before,
