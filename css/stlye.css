@@ -744,7 +744,11 @@ input[type=search] + label:hover::before {
 .new-slider {
     position: relative;
     width: 620px;
-    margin: 20px auto;
+    margin-bottom: 20px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 4;
 }
 
 .new-slider input {
@@ -754,13 +758,13 @@ input[type=search] + label:hover::before {
 .new-slider-controls {
     position: absolute;
     z-index: 3;
-    bottom: 35px;
+    bottom: 15px;
     left: 50%;
     text-align: center;
     transform: translateX(-50%);
 }
 
-.new-slider-controls label {
+.new-slider-controls .slider-btn {
     display: inline-block;
     margin: 0 3px;
     width: 10px;
@@ -773,11 +777,37 @@ input[type=search] + label:hover::before {
     transition: background-color 0.2s;
 }
 
-#btn-1:checked ~ .new-slider-controls label[for="btn-1"] {
+.new-slider-controls .slider-arrow-left {
+    position: absolute;
+    left: -265px;
+    bottom: 80px;
+    display: inline-block;
+    margin: 0;
+    width: 22px;
+    height: 40px;
+    cursor: pointer;
+    background: url('../img/icon-arrow-left.svg') 50% 50% no-repeat;
+    z-index: 3;
+}
+
+.new-slider-controls .slider-arrow-right {
+    position: absolute;
+    left: 285px;
+    bottom: 80px;
+    display: inline-block;
+    margin: 0;
+    width: 22px;
+    height: 40px;
+    cursor: pointer;
+    background: url('../img/icon-arrow-right.svg') 50% 50% no-repeat;
+    z-index: 3;
+}
+
+#btn-1:checked ~ .new-slider-controls .slider-btn[for="btn-1"] {
     background-color: #ee3643;
 }
 
-#btn-2:checked ~ .new-slider-controls label[for="btn-2"] {
+#btn-2:checked ~ .new-slider-controls .slider-btn[for="btn-2"] {
     background-color: #ee3643;
 }
 
@@ -794,7 +824,6 @@ input[type=search] + label:hover::before {
 }
 
 .new-slider-slides {
-
     width: 200%;
     color: #fff;
     transition: transform 0.8s ease;
@@ -811,7 +840,7 @@ input[type=search] + label:hover::before {
 .new-slider-slides h2 {
     position: absolute;
     top: 20px;
-    left: 20px;
+    left: 30px;
     margin: 0;
     font-size: 36px;
     text-transform: uppercase;
@@ -820,7 +849,7 @@ input[type=search] + label:hover::before {
 .new-slider-slides p {
     position: absolute;
     top: 60px;
-    left: 20px;
+    left: 30px;
     margin: 0;
     font-size: 18px;
 }
@@ -829,6 +858,13 @@ input[type=search] + label:hover::before {
     float: left;
     width: 620px;
     height: 266px;
+}
+
+.new-slider .btn-link-red {
+    position: absolute;
+    left: 25px;
+    bottom: 5px;
+    width: 195px;
 }
 /* Секции - Популярные товары, Популярные производители */
 .popular {
