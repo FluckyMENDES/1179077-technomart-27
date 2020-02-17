@@ -57,6 +57,7 @@
             <button type="button" class="btn">Войти</button>
             <a href="#" class="link-btn">Регистрация</a>
           </div>
+          
         </section>
         <div class="header__menu">
           <nav>
@@ -68,7 +69,6 @@
               <li><a href="">Спецпредложения</a></li>
               <li><a href="">Доставка</a></li>
               <li><a href="">Контакты</a></li>
-              
             </ul>
           </nav>
         </div>
@@ -82,7 +82,7 @@
           <h2 class="visually-hidden">Каталог товаров</h2>
           <div class="catalog__card catalog__card-materials">
             <div class="flag flag-new">новинка</div>
-            <h3>Материалы</h3>
+            <h3>Материалы </h3>
             <a href="#">На любой вкус</a>
           </div>
           <div class="catalog__card catalog__card-instrument">
@@ -211,14 +211,15 @@
             <a href="#" class="btn-link-red">Все производители</a>
           </div>
             <ul class="brands__wrapper">
-              <li><a href="#" class="brands__wrapper__item bosch"></a></li>
-              <li><a href="#" class="brands__wrapper__item makita"></a></li>
-              <li><a href="#" class="brands__wrapper__item dewalt"></a></li>
-              <li><a href="#" class="brands__wrapper__item interscol"></a></li>
-              <li><a href="#" class="brands__wrapper__item hitachi"></a></li>
-              <li><a href="#" class="brands__wrapper__item lg"></a></li>
-              <li><a href="#" class="brands__wrapper__item aeg"></a></li>
-              <li><a href="#" class="brands__wrapper__item metabo"></a></li>
+              <li><a href="#" class="brands__wrapper__item"><img src="img/bosch.png" alt="Продукция компании Bosch"></a></li>
+              <li><a href="#" class="brands__wrapper__item"><img src="img/makita.png" alt="Продукция компании Makita"></a></li>
+              <li><a href="#" class="brands__wrapper__item"><img src="img/dewalt.png" alt="Продукция компании DeWalt"></a></li>
+              <li><a href="#" class="brands__wrapper__item"><img src="img/interscol.png" alt="Продукция компании Интерскол"></a></li>
+              <li><a href="#" class="brands__wrapper__item"><img src="img/hitachi.png" alt="Продукция компании Hitachi"></a></li>
+              <li><a href="#" class="brands__wrapper__item"><img src="img/lg.png" alt="Продукция компании LG"></a></li>
+              <li><a href="#" class="brands__wrapper__item"><img src="img/aeg.png" alt="Продукция компании AEG"></a></li>
+              <li><a href="#" class="brands__wrapper__item"><img src="img/metabo.png" alt="Продукция компании Metabo"></a></li>
+              
             </ul>
         </section>
       </div>
@@ -325,7 +326,7 @@
             <li><a href="">Материалы</a></li>
             <li><a href="">Техника</a></li>
             <li><a href="">Инструмент</a></li>
-            <li><a href="">Спецпредложения</a></li>
+            <li><a href="">Спецпредложения</a></li>            
           </ul>
           <p>
             г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>
@@ -360,27 +361,33 @@
       </div>
     </footer>
     <section class="modal modal-writeus visually-hidden">
-      <h2>Напишите нам</h2>
-      <button type="button" class="modal-btn-close">Закрыть всплывающее окно</button>
-      <form action="https://echo.htmlacademy.ru" method="post">
-        <div class="modal-writeus__left">
-          <label for="message-name">Ваше имя:</label><br>
-          <input type="text" name="name" id="message-name" placeholder="Имя Фамилия">
+      <div class="wrapper">
+        <h2 class="visually-hidden">Напишите нам</h2>
+        <button type="button" class="modal-btn-close"><span class="visually-hidden">Закрыть всплывающее окно</span></button>
+        <div class="modal-writeus__wrapper">
+          <form action="https://echo.htmlacademy.ru" method="post">
+          <div class="modal-writeus__left">
+            <label for="message-name">Ваше имя:</label>
+            <input type="text" name="name" id="message-name" placeholder="Имя Фамилия">
+          </div>
+          <div class="modal-writeus__right">
+            <label for="message-email">Ваш e-mail:</label>
+            <input type="email" name="email" id="message-email" placeholder="email@example.com">
+          </div>
+          <div class="modal-writeus__text">
+            <label for="message-text">Текст письма:</label>
+            <textarea name="message" id="message-text" rows="5" placeholder="В свободной форме"></textarea>
+          </div>
         </div>
-        <div class="modal-writeus__right">
-          <label for="message-email">Ваш e-mail:</label><br>
-          <input type="email" name="email" id="message-email" placeholder="email@example.com">
-        </div>
-        <div>
-          <label for="message-text">Текст письма:</label><br>
-          <textarea name="message" id="message-text" cols="50" rows="10" placeholder="В свободной форме"></textarea>
-        </div>
-        <button class="button" type="submit">Отправить</button>
-      </form>
+      </div>
+      <div class="modal-writeus-btn">
+        <button class="btn-red" type="submit">Отправить</button>
+      </div>
+          </form>
     </section>
     <section class="modal modal-map visually-hidden">
       <div>
-        <button type="button" class="modal-btn-close">Закрыть всплывающее окно</button>
+        <button type="button" class="modal-btn-close"><span class="visually-hidden">Закрыть всплывающее окно</span></button>
         <img src="img/big-map.png" width="940" height="477" alt="Наш офис находится по адресу: г. Санкт-Петербург, ул. Большая Конюшенная, дом 19/8">
       </div>
     </section>

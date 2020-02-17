@@ -421,10 +421,10 @@ input[type=search] + label:hover::before {
     position: relative;
     display: inline-block;
     float: left;
-    width: 120px;
+    min-width: 120px;
     min-height: 45px;
     margin-right: 10px;
-    padding-left: 30px;
+    padding-left: 40px;
     background-color: #fff;
     border: none;
     font-size: 21px;
@@ -469,8 +469,10 @@ input[type=search] + label:hover::before {
 /* Кнопка "Регистрация */
 .header__middle .link-btn {
     display: inline-block;;
-    width: 150px;
-    height: 45px;
+    min-width: 150px;
+    min-height: 45px;
+    margin-bottom: 10px;
+    padding: 0 10px;
     text-align: center;
     line-height: 45px;
     border: none;
@@ -504,11 +506,22 @@ input[type=search] + label:hover::before {
 
 /* Пункты меню */
 .header__menu li {
+    padding-left: 10px;
+    padding-right: 10px;
     flex-grow: 1;
+    flex-shrink: 0;
     background: #32425c;
     list-style: none;
     box-shadow: inset 0px -5px 0px #293449;
     transition: ease 0.2s;
+}
+
+.header__menu li:first-child {
+    padding-left: 30px;
+}
+
+.header__menu li:last-child {
+    padding-right: 30px;
 }
 
 .header__menu li:hover,
@@ -563,6 +576,7 @@ input[type=search] + label:hover::before {
 
 /* Заголовок каточки */
 .catalog__card h3 {
+    max-width: 200px;
     margin: 0;
     margin-top: 20px;
     margin-left: 25px;
@@ -576,7 +590,7 @@ input[type=search] + label:hover::before {
     left: 25px;
     display: block;
     width: 135px;
-    height: 38px;
+    min-height: 38px;
     font-size: 14px;
     line-height: 38px;
     text-align: center;
@@ -903,6 +917,7 @@ input[type=search] + label:hover::before {
 .popular ul{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -928,7 +943,10 @@ input[type=search] + label:hover::before {
 }
 
 .brands__wrapper__item {
-    display: block;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 20px;
     width: 218px;
     height: 143px;
@@ -937,6 +955,9 @@ input[type=search] + label:hover::before {
     background-repeat: no-repeat;
     outline: none;
     transition: ease 0.2s;
+}
+
+.brands__wrapper__item img{
 }
 
 
@@ -950,39 +971,6 @@ input[type=search] + label:hover::before {
     box-shadow: 0 0 10px rgba(41, 52, 73, 1);
     opacity: 0.3;
 }
-
-.brands__wrapper .bosch {
-    background-image: url('../img/bosch.png');
-}
-
-.brands__wrapper .makita {
-    background-image: url('../img/makita.png');
-}
-
-.brands__wrapper .dewalt {
-    background-image: url('../img/dewalt.png');
-}
-
-.brands__wrapper .interscol {
-    background-image: url('../img/interscol.png');
-}
-
-.brands__wrapper .hitachi {
-    background-image: url('../img/hitachi.png');
-}
-
-.brands__wrapper .lg {
-    background-image: url('../img/lg.png');
-}
-
-.brands__wrapper .aeg {
-    background-image: url('../img/aeg.png');
-}
-
-.brands__wrapper .metabo {
-    background-image: url('../img/metabo.png');
-}
-
 
 /* Сервисы  */
 
@@ -1081,7 +1069,9 @@ input[type=search] + label:hover::before {
 
 .features__bottom__text {
     padding-left: 80px;
+    z-index: 2;
 }
+
 .features__bottom__text h2 {
     margin: 0;
     margin-bottom: 20px;
@@ -1149,9 +1139,10 @@ input[type=search] + label:hover::before {
 
 /* Список транспортных компаний */
 .about ul {
+    margin-bottom: 40px;
+    padding-left: 30px;
     font-size: 18px;
     line-height: 20px;
-    padding-left: 30px;
     list-style: none;
 }
 
@@ -1301,7 +1292,7 @@ input[type=search] + label:hover::before {
 
 /* Нижний отступ до footer__original */
 .footer__bottom li {
-    margin-bottom: 75px;
+    margin-bottom: 20px;
 }
 
 .footer__bottom a,
@@ -1313,6 +1304,7 @@ input[type=search] + label:hover::before {
 /* Блок с адресом */
 .footer__bottom p {
     margin: 0;
+    margin-bottom: 50px;
     order: -1;
     width: 334px;
     font-size: 18px;
@@ -1946,6 +1938,7 @@ input[type=search] + label:hover::before {
 .goods__cards__item:focus {
     box-shadow: 0 0 10px rgba(41, 52, 73, 0.25);
 }
+
 /* .goods__cards__item:nth-child(3n) {
     margin-right: 0;
 } */
@@ -1991,7 +1984,7 @@ input[type=search] + label:hover::before {
     width: 135px;
     margin: 0 auto;
     margin-bottom: 7px;
-    padding: 7px 0;
+    padding: 7px 25px;
     border: 3px solid #63a63e;
     border-radius: 3px;
     color: #fff;
@@ -2008,6 +2001,10 @@ input[type=search] + label:hover::before {
     color: #fff;
     background-color: #63a63e;
     border-bottom-color: #367315;
+}
+
+.actions .item__bookmark {
+    padding: 7px 10px;
 }
 
 /* Иконка тележки на кнопке "Купить" */
@@ -2148,4 +2145,98 @@ input[type=search] + label:hover::before {
     font-family: 'PT Sans', sans-serif;
     font-size: 13px;
     line-height: 24px;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    max-width: 620px;
+    z-index: 100;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+}
+
+.modal-writeus {
+    min-width: 620px;
+    min-height: 424px;
+    font-size: 18px;
+    box-shadow: 0 10px 15px 1px rgba(0,0,0,0.5),
+                0 -7px 0 0 #ff5357;
+}
+
+.modal-writeus .wrapper {
+    padding: 50px 80px 35px;
+}
+
+.modal-btn-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 21px;
+    height: 21px;
+    background: url('../img/btn-cross.svg') 50% 50% no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-writeus__wrapper form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.modal-writeus__left {
+    width: 48%;
+}
+
+.modal-writeus__right {
+    width: 48%;
+}
+
+.modal-writeus__text {
+    width: 100%;
+}
+
+.modal-writeus-btn button {
+    width: 100%;
+}
+
+.modal-writeus label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.modal-writeus input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 25px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    color: #a9a9a9;
+    border: 2px solid #dee3e4;
+    border-radius: 3px;
+}
+
+.modal-writeus textarea {
+    width: 100%;
+    padding: 14px;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 13px;
+    color: #a9a9a9;
+    border: 2px solid #dee3e4;
+    border-radius: 3px;
+    resize: none;
+}
+
+.modal-writeus-btn {
+    width: 100%;
+    padding: 37px 80px;
+    background-color: #f4f4f4;
+}
+
+.modal-map {
+    min-width: 940px;
+    min-height: 448px;
+    box-shadow: 0 0 15px 1px rgba(0,0,0,0.5);
 }
