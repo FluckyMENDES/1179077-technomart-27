@@ -50,6 +50,7 @@ a {
     display: flex;
     justify-content: space-between;
     width: 940px;
+    max-width: 100%;
     height: 42px;
     margin: 0 auto;
     font-size: 17px;
@@ -345,6 +346,7 @@ input[type=search] + label:hover::before {
     justify-content: space-between;
     align-items: flex-start;
     width: 940px;
+    max-width: 100%;
     margin: 0 auto;
     padding-top: 45px;
     padding-bottom: 25px;
@@ -499,6 +501,7 @@ input[type=search] + label:hover::before {
     align-items: center;
     flex-wrap: wrap;
     width: 940px;
+    max-width: 100%;
     height: 60px;
     margin: 0 auto;
     padding: 0;
@@ -548,6 +551,7 @@ input[type=search] + label:hover::before {
 
 .catalog {
     width: 940px;
+    max-width: 100%;
     margin: 0 auto;
     padding-top: 60px;
     padding-bottom: 50px;
@@ -562,7 +566,7 @@ input[type=search] + label:hover::before {
 .catalog__card {
     position: relative;
     margin-bottom: 20px;
-    width: 300px;
+    width: 100%;
     height: 123px;
     font-size: 24px;
     line-height: 30px;
@@ -883,6 +887,7 @@ input[type=search] + label:hover::before {
 /* Секции - Популярные товары, Популярные производители */
 .popular {
     width: 940px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -929,6 +934,7 @@ input[type=search] + label:hover::before {
 
 .brands {
     width: 940px;
+    max-width: 100%;
     margin: 0 auto;
     padding-bottom: 60px;
 }
@@ -957,9 +963,6 @@ input[type=search] + label:hover::before {
     transition: ease 0.2s;
 }
 
-.brands__wrapper__item img{
-}
-
 
 .brands__wrapper__item:hover,
 .brands__wrapper__item:focus {
@@ -980,6 +983,7 @@ input[type=search] + label:hover::before {
 
 .features {
     width: 940px;
+    max-width: 100%;
     margin: 0 auto;
     padding-top: 70px;
     padding-bottom: 10px;
@@ -1004,14 +1008,17 @@ input[type=search] + label:hover::before {
 }
 
 .features__bottom {
+    position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 
 .features__bottom__buttons {
     position: relative;
     width: 240px;
+    margin-right: 80px;
+    margin-bottom: 130px;
 }
 
 .features__shadow {
@@ -1068,8 +1075,7 @@ input[type=search] + label:hover::before {
 }
 
 .features__bottom__text {
-    padding-left: 80px;
-    z-index: 2;
+    justify-self: center;
 }
 
 .features__bottom__text h2 {
@@ -1081,8 +1087,16 @@ input[type=search] + label:hover::before {
     color: #32425c;
 }
 
-.features__bottom__text {
-    width: 300px;
+.features__bottom__text p {
+    z-index: 2;
+}
+
+.features__bottom__text img {
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 30px;
+    z-index: 1;
 }
 
 
@@ -1106,6 +1120,7 @@ input[type=search] + label:hover::before {
 /* Делим секцию на половину экрана */
 .columns-2 {
     width: 940px;
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -1225,6 +1240,7 @@ input[type=search] + label:hover::before {
     display: flex;
     justify-content: space-between;
     width: 940px;
+    max-width: 100%;
     margin: 0 auto;
     background-color: #32425c;
 }
@@ -1286,6 +1302,7 @@ input[type=search] + label:hover::before {
     display: flex;
     justify-content: space-between;
     width: 940px;
+    max-width: 100%;
     margin: 0 auto;
     background-color: #32425c;
 }
@@ -1327,6 +1344,7 @@ input[type=search] + label:hover::before {
     justify-content: space-between;
     align-items: center;
     width: 940px;
+    max-width: 100%;
     margin: 0 auto;
     padding-top: 20px;
     background-color: #293449;
@@ -1552,6 +1570,7 @@ input[type=search] + label:hover::before {
 .filters-and-goods__inner {
     margin: 0 auto;
     width: 940px;
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
 }
@@ -1846,6 +1865,7 @@ input[type=search] + label:hover::before {
 /* Правый-блок с товарами и сортировкой товаров */
 .goods {
     width: 700px;
+    max-width: 100%;
 }
 
 /* Блок сортировки товаров */
@@ -2137,6 +2157,7 @@ input[type=search] + label:hover::before {
 }
 .info {
     width: 940px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 65px 0 55px;
 }
@@ -2151,7 +2172,9 @@ input[type=search] + label:hover::before {
     position: fixed;
     top: 50%;
     left: 50%;
-    max-width: 620px;
+    width: 620px;
+    max-width: 100%;
+    max-height: 100%;
     z-index: 100;
     background-color: #fff;
     transform: translate(-50%, -50%);

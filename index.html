@@ -235,17 +235,17 @@
               <div class="features__shadow"></div>
               <ul>
                 <li>
-                  <button type="button" class="features__bottom__buttons__btn features__bottom__buttons__btn-active">Доставка</button>
+                  <button type="button" class="features__bottom__buttons__btn features__bottom__buttons__btn-active" id="features_delivery_btn">Доставка</button>
                 </li>
                 <li>
-                  <button type="button" class="features__bottom__buttons__btn">Гарантия</button>
+                  <button type="button" class="features__bottom__buttons__btn" id="features_guarantee_btn">Гарантия</button>
                 </li>
                 <li>
-                  <button type="button" class="features__bottom__buttons__btn">Кредит</button>
+                  <button type="button" class="features__bottom__buttons__btn" id="features_credit_btn">Кредит</button>
                 </li>
               </ul>
             </div>
-            <div class="features__bottom__text">
+            <div class="features__bottom__text" id="features_delivery">
               <h2>Доставка</h2>
               <p>
                 Мы с удовольствием доставим ваш товар прямо<br> 
@@ -253,8 +253,9 @@
                 Ведь мы неплохо заработаем, <br>
                 поднимая его на ваш этаж!
               </p>
+              <img src="img/services-car.png" alt="" width="468" height="261">
             </div>
-            <div class="features__bottom__text visually-hidden">
+            <div class="features__bottom__text visually-hidden" id="features_guarantee">
               <h2>Гарантия</h2>
               <p>
                 Eсли купленный у нас товар поломается или заискрит, <br>
@@ -263,15 +264,17 @@
                 Мы обменяем сгоревший товар на новый. <br>
                 Дом уж восстановите как-нибудь сами.
               </p>
+              <img src="img/services-badge.png" alt="" width="389" height="283">
             </div>
-            <div class="features__bottom__text visually-hidden">
+            <div class="features__bottom__text visually-hidden" id="features_credit">
               <h2>Кредит</h2>
               <p>
                 Залезть в долговую яму стало проще! <br>
                 Кредитные консультанты придут вам на помощь.<br>
               </p>
+              <img src="img/services-contract.png" alt="" width="465" height="285">
             </div>
-            <div class="features__bottom__img"></div>         
+                    
           </div>
         </section>
       </div>
@@ -299,9 +302,9 @@
             <p>Вы можете забрать товар сами, <br>
                 заехав в наш офис:
             </p>
-            <button type="button" class="btn-map"><img src="img/min-map.png" width="300" height="158" alt="Как проехать до нашего офиса"></button>
+            <button type="button" class="btn-map" id="modal_map_btn"><img src="img/min-map.png" width="300" height="158" alt="Как проехать до нашего офиса"></button>
             <br>
-            <button type="button" class="btn-red">Заблудились? Напишите нам!</button>
+            <button type="button" class="btn-red" id="modal_writeus_btn">Заблудились? Напишите нам!</button>
           </seciton>
         </div>
       </div>
@@ -360,10 +363,10 @@
         </div>
       </div>
     </footer>
-    <section class="modal modal-writeus visually-hidden">
+    <section class="modal modal-writeus visually-hidden" id="modal_writeus">
       <div class="wrapper">
         <h2 class="visually-hidden">Напишите нам</h2>
-        <button type="button" class="modal-btn-close"><span class="visually-hidden">Закрыть всплывающее окно</span></button>
+        <button type="button" class="modal-btn-close" id="modal_writeus_btn_close"><span class="visually-hidden">Закрыть всплывающее окно</span></button>
         <div class="modal-writeus__wrapper">
           <form action="https://echo.htmlacademy.ru" method="post">
           <div class="modal-writeus__left">
@@ -385,11 +388,12 @@
       </div>
           </form>
     </section>
-    <section class="modal modal-map visually-hidden">
+    <section class="modal modal-map visually-hidden" id="modal_map">
       <div>
-        <button type="button" class="modal-btn-close"><span class="visually-hidden">Закрыть всплывающее окно</span></button>
+        <button type="button" class="modal-btn-close" id="modal_map_btn_close"><span class="visually-hidden">Закрыть всплывающее окно</span></button>
         <img src="img/big-map.png" width="940" height="477" alt="Наш офис находится по адресу: г. Санкт-Петербург, ул. Большая Конюшенная, дом 19/8">
       </div>
     </section>
+    <script src="js/script.js"></script>
   </body>
 </html>
