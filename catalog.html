@@ -3,13 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Техномарт</title>
-    <link rel="stylesheet" href="css/stlye.css">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/stlye-min.css"  type="text/css">
+    <link rel="stylesheet" href="css/normalize-min.css"  type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700&display=swap&subset=cyrillic" rel="stylesheet">
   </head>
   <body>
     <header class="header">
       <div class="header__upper__outer">
         <section class="header__upper">
+          <h2 class="visually-hidden">Панель управления</h2>
           <div class="wrapper-left">
             <a href="index.html" class="header__upper__logo"></a>
             <div class="header__upper__search">
@@ -40,14 +43,15 @@
       </div>
       <div class="header__middle__outer">
         <section class="header__middle">
-          <p>
+          <h2 class="visually-hidden">Панель пользователя</h2>
+          <p class="header__middle__decription">
             Интернет-магазин <br>
             строительных материалов <br>
             и инструментов для ремонта
           </p>
           <div class="wrapper">
             <div class="header__middle__phone">
-              <span>+7 (812) 555-05-55</span>
+              <a href="tel:+78125550555">+7 (812) 555-05-55</a>
             </div>
             <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
           </div>
@@ -77,7 +81,7 @@
     </header>
 
     <main>
-      <div class="crumps__outer"></div>
+      <div class="crumps__outer">
         <section class="crumps">
           <h2 class="visually-hidden">Категории товаров</h2>
           <ul>
@@ -95,7 +99,7 @@
             <h2>Фильтр:</h2>
             <form action="https://echo.htmlacademy.ru" method="post">
               <div class="filter__price">
-                <label for="price"><h3>Цена:</h3></label>
+                <span>Цена:</span>
                 <div class="filter__price__range">
                   <div class="range-controls">
                     <div class="scale">
@@ -107,12 +111,12 @@
                   <div class="price-controls">
                     <div class="price-controls-min">
                       <label for="min-price"></label>
-                      <input type="number" name="min-price" value="0" ></input>
+                      <input type="number" name="min-price" id="min-price" value="0" >
                     </div>
-                    &#822
+                    &#822;
                     <div class="price-controls-max">
                       <label for="max-price"></label>
-                      <input type="number" name="max-price" value="30000"></input>
+                      <input type="number" name="max-price" id="max-price" value="30000">
                     </div>
                   </div>
                 </div>
@@ -149,9 +153,9 @@
             <div class="goods__sorting">
               <h3>Сортировка:</h3>
               <ul class="goods__sorting__buttons">
-                <li><a href="">по цене</a></li>
-                <li><a href="">по типу</a></li>
-                <li><a href="">по функионалу</a></li>
+                <li><a href="#" class="goods__button-active">по цене</a></li>
+                <li><a href="#">по типу</a></li>
+                <li><a href="#">по функционалу</a></li>
               </ul>
               <ul class="goods__sorting__arrows">
                 <li><a href=""><img src="img/icon-up-dir.svg" alt="Сортировка по возрастанию"></a></li>
@@ -160,7 +164,7 @@
             </div>
             <ul class="goods__cards">
               <li>
-                <article class="goods__cards__item">
+                <div class="goods__cards__item">
                   <div class="flag">новинка</div>
                   <div class="actions">
                     <a href="#" class="item__buy">
@@ -168,132 +172,132 @@
                     <a href="#" class="item__bookmark">В закладки</a>
                   </div>
                   <div class="goods__cards__item__image">
-                    <img src="img/Perforator_2.jpg" width="218" height="168" alt="Bosch BFG 3000">
+                    <img src="img/Perforator_2.jpg" width="218" height="168" alt="Перфоратор Bosch. Модель - BFG 3000">
                   </div>
                   <div class="item__title">Перфоратор BOSCH BFG 3000</div>
                   <div class="item__discount">22500 Р.</div>
                   <div class="item__price">15500 Р.</div>
-                </article>
+                </div>
               </li>
               <li>
-                <article class="goods__cards__item">
+                <div class="goods__cards__item">
                   <div class="flag">новинка</div>
                   <div class="actions">
                     <a href="#" class="item__buy">Купить</a>
                     <a href="#" class="item__bookmark">В закладки</a>
                   </div>
                   <div class="goods__cards__item__image">
-                    <img src="img/Perforator_3.jpg" width="218" height="168" alt="Bosch BFG 3000">
+                    <img src="img/Perforator_3.jpg" width="218" height="168" alt="Перфоратор Bosch. Модель -  BFG 6000">
                   </div>
                   <div class="item__title">Перфоратор BOSCH BFG 6000</div>
                   <div class="item__discount">30500 Р.</div>
                   <div class="item__price">25500 Р.</div>
-                </article>
+                </div>
               </li>
               <li>
-                <article class="goods__cards__item">
+                <div class="goods__cards__item">
                   <div class="flag flag-new">новинка</div>
                   <div class="actions">
                     <a href="#" class="item__buy">Купить</a>
                     <a href="#" class="item__bookmark">В закладки</a>
                   </div>
                   <div class="goods__cards__item__image">
-                    <img src="img/Perforator_2.jpg" width="218" height="168" alt="Bosch BFG 3000">
+                    <img src="img/Perforator_2.jpg" width="218" height="168" alt="Перфоратор Bosch. Модель -  BFG 2000">
                   </div>
                   <div class="item__title">Перфоратор BOSCH BFG 2000</div>
                   <div class="item__discount"></div>
                   <div class="item__price">12500 Р.</div>
-                </article>
+                </div>
               </li>
               <li>
-                <article class="goods__cards__item">
+                <div class="goods__cards__item">
                   <div class="flag">новинка</div>
                   <div class="actions">
                     <a href="#" class="item__buy">Купить</a>
                     <a href="#" class="item__bookmark">В закладки</a>
                   </div>
                   <div class="goods__cards__item__image">
-                    <img src="img/Perforator_2.jpg" width="218" height="168" alt="Bosch BFG 3000">
+                    <img src="img/Perforator_2.jpg" width="218" height="168" alt="Перфоратор Bosch. Модель -  BFG 3000">
                   </div>
                   <div class="item__title">Перфоратор BOSCH BFG 3000</div>
                   <div class="item__discount">22500 Р.</div>
                   <div class="item__price">15500 Р.</div>
-                </article>
+                </div>
               </li>
               <li>
-                <article class="goods__cards__item">
+                <div class="goods__cards__item">
                   <div class="flag flag-new">новинка</div>
                   <div class="actions">
                     <a href="#" class="item__buy">Купить</a>
                     <a href="#" class="item__bookmark">В закладки</a>
                   </div>
                   <div class="goods__cards__item__image">
-                    <img src="img/Perforator_3.jpg" width="218" height="168" alt="Bosch BFG 3000">
+                    <img src="img/Perforator_3.jpg" width="218" height="168" alt="Перфоратор Bosch. Модель -  BFG 6000">
                   </div>
                   <div class="item__title">Перфоратор BOSCH BFG 6000</div>
                   <div class="item__discount">30500 Р.</div>
                   <div class="item__price">25500 Р.</div>
-                </article>
+                </div>
               </li>
               <li>
-                <article class="goods__cards__item">
+                <div class="goods__cards__item">
                   <div class="flag">новинка</div>
                   <div class="actions">
                     <a href="#" class="item__buy">Купить</a>
                     <a href="#" class="item__bookmark">В закладки</a>
                   </div>
                   <div class="goods__cards__item__image">
-                    <img src="img/Perforator_2.jpg" width="218" height="168" alt="Bosch BFG 3000">
+                    <img src="img/Perforator_2.jpg" width="218" height="168" alt="Перфоратор Bosch. Модель -  BFG 2000">
                   </div>
                   <div class="item__title">Перфоратор BOSCH BFG 2000</div>
                   <div class="item__discount"></div>
                   <div class="item__price">12500 Р.</div>
-                </article>
+                </div>
               </li>
               <li>
-                <article class="goods__cards__item">
+                <div class="goods__cards__item">
                   <div class="flag flag-new">новинка</div>
                   <div class="actions">
                     <a href="#" class="item__buy">Купить</a>
                     <a href="#" class="item__bookmark">В закладки</a>
                   </div>
                   <div class="goods__cards__item__image">
-                    <img src="img/Perforator_2.jpg" width="218" height="168" alt="Bosch BFG 3000">
+                    <img src="img/Perforator_2.jpg" width="218" height="168" alt="Перфоратор Bosch. Модель -   BFG 3000">
                   </div>
                   <div class="item__title">Перфоратор BOSCH BFG 3000</div>
                   <div class="item__discount">22500 Р.</div>
                   <div class="item__price">15500 Р.</div>
-                </article>
+                </div>
               </li>
               <li>
-                <article class="goods__cards__item">
+                <div class="goods__cards__item">
                   <div class="flag">новинка</div>
                   <div class="actions">
                     <a href="#" class="item__buy">Купить</a>
                     <a href="#" class="item__bookmark">В закладки</a>
                   </div>
                   <div class="goods__cards__item__image">
-                    <img src="img/Perforator_3.jpg" width="218" height="168" alt="Bosch BFG 3000">
+                    <img src="img/Perforator_3.jpg" width="218" height="168" alt="Перфоратор Bosch. Модель -   BFG 6000">
                   </div>
                   <div class="item__title">Перфоратор BOSCH BFG 6000</div>
                   <div class="item__discount">30500 Р.</div>
                   <div class="item__price">25500 Р.</div>
-                </article>
+                </div>
               </li>
               <li>
-                <article class="goods__cards__item">
+                <div class="goods__cards__item">
                   <div class="flag">новинка</div>
                   <div class="actions">
                     <a href="#" class="item__buy">Купить</a>
                     <a href="#" class="item__bookmark">В закладки</a>
                   </div>
                   <div class="goods__cards__item__image">
-                    <img src="img/Perforator_2.jpg" width="218" height="168" alt="Bosch BFG 3000">
+                    <img src="img/Perforator_2.jpg" width="218" height="168" alt="Перфоратор Bosch. Модель -   BFG 2000">
                   </div>
                   <div class="item__title">Перфоратор BOSCH BFG 2000</div>
                   <div class="item__discount"></div>
                   <div class="item__price">15500 Р.</div>
-                </article>
+                </div>
               </li>
               
             </ul>
@@ -341,7 +345,7 @@
           </ul>
           <p>
             г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>
-            +7 (812) 555-05-55
+            <a href="tel:+78125550555" class="footer__phone-link">+7 (812) 555-05-55</a>
           </p>
         </div>
       </div>
@@ -372,7 +376,7 @@
     <section class="modal modal-bought visually-hidden">
       <button type="button" class="modal-btn-close">Закрыть всплывающее окно</button>
       <div>
-        <img src="img/icon-apply-green.svg" width="66" height="66" alt="Выполнено">
+        <img src="img/icon-apply-green.svg" width="66" height="66" alt="Успешно!">
         <h2>Товар добавлен в корзину!</h2>
       </div>
       <div>

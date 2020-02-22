@@ -55,10 +55,6 @@ body {
     font-family: 'Cuprum', sans-serif;
 }
 
-button {
-    font-family: 'Cuprum', sans-serif;
-}
-
 img { 
     max-width: 100%;
     height: auto;
@@ -393,7 +389,7 @@ input[type=search] + label:hover::before {
 }
 
 /* Блок описания магазина */
-.header__middle p:first-child {
+.header__middle__decription {
     width: 250px;
     margin: 0;
     padding: 0;
@@ -468,6 +464,7 @@ input[type=search] + label:hover::before {
     padding-left: 40px;
     border: none;
     outline: none;
+    font-family: 'Cuprum', sans-serif;
     font-size: 21px;
     text-align: center;
     background-color: #fff;
@@ -596,15 +593,63 @@ input[type=search] + label:hover::before {
 /* Каталог */
 
 .catalog {
+    display: -ms-grid;
     display: grid;
     gap: 20px;
+    -ms-grid-columns: 300px 20px 300px 20px 300px;
     grid-template-columns: 300px 300px 300px;
+    -ms-grid-rows: 123px 20px 123px 20px 123px;
     grid-template-rows: 123px 123px 123px;
     width: 940px;
     max-width: 100%;
     margin: 0 auto;
     padding-top: 60px;
     padding-bottom: 50px;
+}
+
+.catalog > *:nth-child(3) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+}
+
+.catalog > *:nth-child(4) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+}
+
+.catalog > *:nth-child(5) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+}
+
+.catalog > *:nth-child(6) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+}
+
+.catalog > *:nth-child(7) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 5;
+}
+
+.catalog > *:nth-child(8) {
+    -ms-grid-row: 5;
+    -ms-grid-column: 5;
+}
+
+.catalog > *:nth-child(9) {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+}
+
+.catalog > *:nth-child(10) {
+    -ms-grid-row: 5;
+    -ms-grid-column: 3;
+}
+
+.catalog > *:nth-child(11) {
+    -ms-grid-row: 5;
+    -ms-grid-column: 5;
 }
 
 /* Карточки категорий каталога */
@@ -736,111 +781,49 @@ input[type=search] + label:hover::before {
 }
 
 /* Слайдер */
-.catalog__slider {
+.slider {
     position: relative;
+    -ms-grid-column: 1;
     grid-column-start: 1;
+    -ms-grid-column-span: 3;
     grid-column-end: 3;
+    -ms-grid-row: 3;
     grid-row-start: 2;
-    grid-row-end: 4;
-    width: 620px;
-    height: 266px;
-    margin-bottom: 20px;
-    color: #fff;
-}
-
-/* Заголовок слайдера */
-.catalog__slider h2{
-    margin: 0;
-    font-size: 36px;
-    text-transform: uppercase;
-}
-
-/* Текст слайдера */
-.catalog__slider p {
-    margin: 0;
-    font-size: 18px;
-}
-
-/* Картинка слайда */
-.catalog__slider__img {
-    width: 100%;
-    height: 100%;
-    padding-top: 20px;
-    padding-left: 25px;
-    background-image: url('../img/slider-image-1.jpg');
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-}
-
-/* Стрелка влево */
-.catalog__slider__arrows__left {
-    position: absolute;
-    display: inline-block;
-    top: 50%;
-    left: 25px;
-    width: 22px;
-    height: 40px;
-    transform: translateY(-50%);
-    background: url('../img/icon-arrow-left.svg');
-}
-
-/* Стрелка вправо */
-.catalog__slider__arrows__right {
-    position: absolute;
-    display: inline-block;
-    top: 50%;
-    right: 25px;
-    width: 22px;
-    height: 40px;
-    transform: translateY(-50%);
-    background: url('../img/icon-arrow-right.svg');
-}
-
-.catalog__slider a {
-    position: absolute;
-    bottom: 25px;
-    left: 25px;
-    width: 195px;
-}
-
-/* Новый слайдер */
-.new-slider {
-    position: relative;
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 2;
+    -ms-grid-row-span: 3;
     grid-row-end: 4;
     width: 620px;
     margin-bottom: 20px;
 }
 
-.new-slider input {
+.slider input {
     display: none;
 }
 
-.new-slider-controls {
+.slider__controls {
     position: absolute;
     bottom: 15px;
     left: 50%;
     z-index: 3;
     text-align: center;
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
 }
 
-.new-slider-controls .slider-btn {
+.slider__controls .slider__btn {
     display: inline-block;
     width: 10px;
     height: 10px;
     margin: 0 3px;
     border: 2px solid #fff;
     border-radius: 50%;
+    text-align: center;
     background-color: #fff;
     cursor: pointer;
     box-shadow: 0 0 2px 0 rgba(0,0,0,0.8);
     transition: background-color 0.2s;
 }
 
-.new-slider-controls .slider-arrow-left {
+.slider__controls .slider__arrow-left {
     position: absolute;
     left: -265px;
     bottom: 80px;
@@ -849,11 +832,12 @@ input[type=search] + label:hover::before {
     width: 22px;
     height: 40px;
     margin: 0;
+    text-align: center;
     background: url('../img/icon-arrow-left.svg') 50% 50% no-repeat;
     cursor: pointer;
 }
 
-.new-slider-controls .slider-arrow-right {
+.slider__controls .slider__arrow-right {
     position: absolute;
     left: 285px;
     bottom: 80px;
@@ -862,45 +846,47 @@ input[type=search] + label:hover::before {
     width: 22px;
     height: 40px;
     margin: 0;
+    text-align: center;
     background: url('../img/icon-arrow-right.svg') 50% 50% no-repeat;
     cursor: pointer;
 }
 
-#btn-1:checked ~ .new-slider-controls .slider-btn[for="btn-1"] {
+/* Не смог сделать слайдер на CSS без id и вложенности меньше 3-ех*/
+#btn-1:checked ~ .slider__controls .slider__btn[for="btn-1"] {
     background-color: #ee3643;
 }
 
-#btn-2:checked ~ .new-slider-controls .slider-btn[for="btn-2"] {
+#btn-2:checked ~ .slider__controls .slider__btn[for="btn-2"] {
     background-color: #ee3643;
 }
 
-#btn-1:checked ~ .new-slider-inner .new-slider-slides {
+#btn-1:checked ~ .slider__inner .sliders__lides {
     transform: translate(0);
 }
 
-#btn-2:checked ~ .new-slider-inner .new-slider-slides {
+#btn-2:checked ~ .slider__inner .slider__slides {
     transform: translate(-620px);
 }
 
-.new-slider-inner {
+.slider__inner {
     overflow: hidden;
 }
 
-.new-slider-slides {
+.slider__slides {
     width: 200%;
     color: #fff;
     transition: transform 0.8s ease;
 }
 
-.new-slider__slide-1 {
+.slider__slide-1 {
     position: relative;
 }
 
-.new-slider__slide-2 {
+.slider__slide-2 {
     position: relative;
 }
 
-.new-slider-slides h2 {
+.slider__slides h2 {
     position: absolute;
     top: 20px;
     left: 30px;
@@ -909,7 +895,7 @@ input[type=search] + label:hover::before {
     text-transform: uppercase;
 }
 
-.new-slider-slides p {
+.slider__slides p {
     position: absolute;
     top: 60px;
     left: 30px;
@@ -917,13 +903,13 @@ input[type=search] + label:hover::before {
     font-size: 18px;
 }
 
-.new-slider-slides div {
+.slider__slides div {
     float: left;
     width: 620px;
     height: 266px;
 }
 
-.new-slider .btn-link-red {
+.slider .btn-link-red {
     position: absolute;
     left: 25px;
     bottom: 5px;
@@ -1373,6 +1359,10 @@ input[type=search] + label:hover::before {
     color: #fff;
 }
 
+.footer__bottom .footer__phone-link {
+    text-decoration: none;
+    color: #fff;
+}
 
 /* Самый нижний футер */
 
@@ -1460,6 +1450,7 @@ input[type=search] + label:hover::before {
     padding-left: 48px;
     border: none;
     outline: none;
+    font-family: 'Cuprum', sans-serif;
     text-align: left;
     font-size: 21px;
     background-color: #fff;
@@ -1527,6 +1518,7 @@ input[type=search] + label:hover::before {
 
 .header__middle__wrapper-catalog li {
     display: inline-block;
+    text-align: center;
 }
 
 .header__middle__wrapper-catalog a {
@@ -1563,6 +1555,7 @@ input[type=search] + label:hover::before {
     position: relative;
     display: inline-block;
     padding-right: 40px;
+    text-align: center;
 }
 
 .crumps a {
@@ -1639,10 +1632,12 @@ input[type=search] + label:hover::before {
     background-color: #f7f3ec;
 }
 
-.filters h3 {
+.filter__price span {
+    display: block;
     margin: 0;
     margin-bottom: 15px;
     font-size: 17px;
+    font-weight: bold;
     line-height: 30px;    
 }
 
@@ -1682,7 +1677,9 @@ input[type=search] + label:hover::before {
     top: 30px;
     width: 20px;
     height: 22px;
+    border-radius: 50%;
     background-image: url('../img/filter-button.svg');
+    background-color: #fff;
     cursor: pointer;
 }
 
@@ -1946,12 +1943,22 @@ input[type=search] + label:hover::before {
 .goods__sorting__arrows li {
     display: inline-block;
     margin-left: 15px;
+    text-align: center;
+}
+
+.goods__sorting__arrows img {
+    fill: aqua;
 }
 
 .goods__sorting__buttons a {
     border-bottom: dotted 1px #ee3643;
     color: rgba(0,0,0,0.3);
     transition: ease 0.2s;
+}
+
+.goods__sorting .goods__button-active {
+    border: none;
+    color: #ee3643;
 }
 
 .goods__sorting__buttons a:hover,
@@ -2166,6 +2173,7 @@ input[type=search] + label:hover::before {
 
 .goods__pages li {
     display: inline-block;
+    text-align: center;
 }
 
 /* Кнопка страницы с цифрой */
@@ -2190,6 +2198,7 @@ input[type=search] + label:hover::before {
     margin: 0 0 20px;
     font-family: 'Cuprum', sans-serif;
     font-size: 30px;
+    font-weight: normal;
     text-transform: uppercase;
 }
 .info {
@@ -2255,6 +2264,11 @@ input[type=search] + label:hover::before {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+.modal-writeus p {
+    margin: 0;
+    padding: 0;
 }
 
 .modal-writeus__left {

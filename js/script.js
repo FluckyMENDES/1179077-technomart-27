@@ -1,3 +1,5 @@
+// Модальное окно с формой
+
 let openButton = document.querySelector(".btn-writeus");
 let popup = document.querySelector(".modal-writeus");
 let closeButton = popup.querySelector(".modal-btn-close-writeus");
@@ -5,6 +7,7 @@ let form = popup.querySelector("form");
 let name = popup.querySelector("[name=name]");
 let email = popup.querySelector("[name=email]");
 let message = popup.querySelector("[name=message");
+
 let isStorageSupport = true;
 let storageName = "";
 let storageEmail = "";
@@ -63,25 +66,37 @@ window.addEventListener("keydown", function (evt){
     }
 })
 
-// // Появление модального окна modal-writeus
-// document.getElementById('modal_writeus_btn').onclick = function() {
-//     document.getElementById('modal_writeus').classList.remove('visually-hidden');
-// }
-// // Скрытие модального окна modal-writeus
-// document.getElementById('modal_writeus_btn_close').onclick = function() {
-//     document.getElementById('modal_writeus').classList.add('visually-hidden');
-// }
 
-// Появление модального окна modal-map
-document.getElementById('modal_map_btn').onclick = function() {
-    document.getElementById('modal_map').classList.remove('visually-hidden');
-}
-// Скрытие модального окна modal-map
-document.getElementById('modal_map_btn_close').onclick = function() {
-    document.getElementById('modal_map').classList.add('visually-hidden');
-}
+// Модальное окно с картой
+let mapButtonOpen = document.querySelector(".btn-map");
+let mapPopup = document.querySelector(".modal-map");
+let mapButtonClose = mapPopup.querySelector(".modal-btn-close");
 
-// Преключение стилей кнопок секции "Сервисы"
+
+mapButtonOpen.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    mapPopup.classList.add("modal-show");
+})
+
+mapButtonClose.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    mapPopup.classList.remove("modal-show");
+})
+
+// Закрытие модального окна если нажата клавиша Esc
+window.addEventListener("keydown", function (evt){
+    if (evt.keyCode === 27) {
+        evt.preventDefault();
+        if (mapPopup.classList.contains("modal-show")) { // Если у модального окна есть класс "modal-show"
+            mapPopup.classList.remove("modal-show"); // Удалить класс "modal-show"
+        }
+    }
+})
+
+
+// Слайдер секции "Сервисы"
+
+// Преключение стилей кнопок
 var buttons = document.querySelectorAll('.features__bottom__buttons__btn');
 
 for (var button of buttons) {
@@ -92,7 +107,7 @@ for (var button of buttons) {
    });
 };
 
-// Слайдер секции "Сервисы"
+// Слайдер
 var featuresText = document.querySelector('.features__bottom__text');
 
 document.getElementById('features_delivery_btn').onclick = function() {
