@@ -4,49 +4,39 @@
     <meta charset="utf-8">
     <title>HTML Academy: Техномарт</title>
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/stlye-min.css"  type="text/css">
     <link rel="stylesheet" href="css/normalize-min.css"  type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="css/stlye-min.css"  type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700|PT+Sans&display=swap&subset=cyrillic" rel="stylesheet">
   </head>
   <body>
     <header class="header">
       <div class="header__upper__outer">
         <section class="header__upper">
           <h2 class="visually-hidden">Панель управления</h2>
-          <div class="wrapper-left">
-            <a href="index.html" class="header__upper__logo"></a>
-            <div class="header__upper__search">
-              <form action="https://echo.htmlacademy.ru" method="post">
-                <input type="search" name="search" id="search-field" placeholder="Перфоратор">
-                <label for="search-field">Поиск:</label>
-              </form>
-            </div>
+          <a href="index.html" class="header__upper__logo"></a>
+          <div class="header__upper__search">
+            <form action="https://echo.htmlacademy.ru" method="post">
+              <input type="search" name="search" id="search-field" placeholder="Перфоратор">
+              <label for="search-field">Поиск:</label>
+            </form>
           </div>
-          <div class="wrapper-right">
-            <div class="header__upper__bookmarks">
-              <a href="#" class="header__link__btn header__link__btn-bookmarks">
-                Закладки: 0
-              </a>
-            </div>
-            <div class="header__upper__cart">
-              <a href="#" class="header__link__btn header__link__btn-cart header__link__btn-cart-active">
-                Корзина: 10
-              </a>
-            </div>
-            <div class="header__upper__order">
-              <a href="#" class="header__link__btn header__link__btn-order">
-                Оформить заказ
-              </a>
-            </div>
-          </div>
+          <a href="#" class="header__link__btn header__link__btn-bookmarks">
+            Закладки: 0
+          </a>
+          <a href="#" class="header__link__btn header__link__btn-cart header__link__btn-cart-active">
+            Корзина: 10
+          </a>
+          <a href="#" class="header__link__btn header__link__btn-order">
+            Оформить заказ
+          </a>
         </section>
       </div>
       <div class="header__middle__outer">
         <section class="header__middle">
           <h2 class="visually-hidden">Панель пользователя</h2>
           <p class="header__middle__decription">
-            Интернет-магазин <br>
-            строительных материалов <br>
+            Интернет-магазин
+            строительных материалов
             и инструментов для ремонта
           </p>
           <div class="wrapper">
@@ -56,11 +46,14 @@
             <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
           </div>
           <div class="header__middle__wrapper-catalog">
-            <button type="button" class="btn-logout">Равшан Джамшутович</button>
+            <div class="buttons__wrapper">
+              <button type="button" class="btn-profile">Равшан Джамшутович</button>
+              <button type="button" class="btn-logout"></button>
+            </div>
             <ul>
               <li><a href="#">Мои заказы</a></li>
               <li>&#9899;</li>
-              <li><a href="#">Личный кабинет</a></li>             
+              <li><a href="#">Личный кабинет</a></li>
             </ul>
           </div>
         </section>
@@ -68,12 +61,12 @@
           <nav>
             <ul>
               <li><a href="index.html">Главная</a></li>
-              <li><a href="">Компания</a></li>
-              <li><a href="catalog.html">Каталог</a></li>
-              <li><a href="">Новости</a></li>
-              <li><a href="">Спецпредложения</a></li>
-              <li><a href="">Доставка</a></li>
-              <li><a href="">Контакты</a></li>
+              <li><a href="#">Компания</a></li>
+              <li><a href="#">Каталог</a></li>
+              <li><a href="#">Новости</a></li>
+              <li><a href="#">Спецпредложения</a></li>
+              <li><a href="#">Доставка</a></li>
+              <li><a href="#">Контакты</a></li>
             </ul>
           </nav>
         </div>
@@ -90,7 +83,7 @@
             <li><a href="">Инструмент</a></li>
             <li>Перфораторы</li>
           </ul>
-          <h1>Перфораторы</h1> 
+          <h1>Перфораторы</h1>
         </section>
       </div>
       <div class="filters-and-goods__outer">
@@ -134,7 +127,7 @@
                 <label for="brands-dewalt" class="check">Dewalt</label>
                 <input type="checkbox" name="Hitachi" id="brands-hitachi" class="check__input visually-hidden">
                 <label for="brands-hitachi" class="check">Hitachi</label>
-                
+
               </div>
               <hr>
               <div class="filter-power">
@@ -144,7 +137,8 @@
                 <input type="radio" name="power" id="power-unportable" value="unportable" class="radio__input visually-hidden">
                 <label for="power-unportable" class="radio">Сетевые</label>
               </div>
-              
+
+
               <button class="btn-white btn-white-filter" type="submit">Показать</button>
             </form>
           </section>
@@ -158,8 +152,8 @@
                 <li><a href="#">по функционалу</a></li>
               </ul>
               <ul class="goods__sorting__arrows">
-                <li><a href=""><img src="img/icon-up-dir.svg" alt="Сортировка по возрастанию"></a></li>
-                <li><a href=""><img src="img/icon-down-dir.svg" alt="Сортировка по убыванию"></a></li>
+                <li><a class="goods__arrow--up goods__arrow--active" href="#" aria-label="по возрастанию"></a></li>
+                <li><a class="goods__arrow--down" href="#" aria-label="по убыванию"></a></li>
               </ul>
             </div>
             <ul class="goods__cards">
@@ -299,14 +293,15 @@
                   <div class="item__price">15500 Р.</div>
                 </div>
               </li>
-              
+
+
             </ul>
             <ul class="goods__pages">
               <li><button type="button" class="btn-white btn-white-number btn-white-number-active">1</button></li>
               <li><button type="button" class="btn-white btn-white-number">2</button></li>
               <li><button type="button" class="btn-white btn-white-number">3</button></li>
               <li><button type="button" class="btn-white btn-white-filter">Следующая</button></li>
-            </ul> 
+            </ul>
           </section>
         </div>
       </div>
@@ -314,24 +309,22 @@
         <section class="info">
           <h2>Пара слов о перфораторах</h2>
           <p>
-            Перфоратор — универсальный строительный инструмент. Предназначен для сверления и долбления отверстий в кирпиче, бетоне и камне.
-            Существуют электромеханические и пневматические перфораторы. Современные модели могут выполнять функции дрели, шуруповерта и отбойного молотка. 
+            Перфоратор — универсальный строительный инструмент. Предназначен для сверления и долбления отверстий в кирпиче, бетоне и камне.<br>
+            Существуют электромеханические и пневматические перфораторы. Современные модели могут выполнять функции дрели, шуруповерта и отбойного молотка.
             В ассортиментном ряду есть выбор «трехрежимников»: в одном устройстве будут совмещены отбойный молоток и ударная дрель.
           </p>
         </section>
       </div>
     </main>
- 
+
     <footer class="footer">
       <div class="footer__upper__outer">
         <div class="footer__upper">
-          <div>
-            <a href="index.html" class="header__upper__logo footer__upper__logo"></a>
-          </div>
+          <a href="index.html" class="header__upper__logo footer__upper__logo"></a>
           <ul>
             <li><a href="">Компания</a></li>
             <li><a href="">Новости</a></li>
-            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="#">Каталог</a></li>
             <li><a href="">Доставка</a></li>
             <li><a href="">Контакты</a></li>
           </ul>
@@ -344,7 +337,7 @@
             <li><a href="">Спецпредложения</a></li>
           </ul>
           <p>
-            г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>
+            г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8
             <a href="tel:+78125550555" class="footer__phone-link">+7 (812) 555-05-55</a>
           </p>
         </div>
@@ -352,27 +345,30 @@
       <div class="footer__original__outer">
         <div class="footer__original">
           <p>
-            © 2010–2020 Компания «Техномарт»<br>
+            © 2010–2020 Компания «Техномарт»
             Все права защищены
           </p>
           <div class="footer__original__socials">
             <a href="https://vk.com/" target="_blank" class="footer__original__socials__icon icon-vk"></a>
             <a href="https://fb.com/" target="_blank" class="footer__original__socials__icon icon-fb"></a>
-            <a href="https://instagram.com/" target="_blank" class="footer__original__socials__icon icon-ig"></a> 
+            <a href="https://instagram.com/" target="_blank" class="footer__original__socials__icon icon-ig"></a>
+
           </div>
+
           <div class="footer__original__developer">
             <p>
-              Обратная связь:<br>
+              Обратная связь:
               <a href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
             </p>
             <p>
-              Разработано —<br>
+              Разработано —
               <a href="https://htmlacademy.ru/intensive/htmlcss" target="_blank"><span>htmlacademy.ru</span></a>
             </p>
           </div>
         </div>
       </div>
     </footer>
+
     <section class="modal modal-bought visually-hidden">
       <button type="button" class="modal-btn-close">Закрыть всплывающее окно</button>
       <div>

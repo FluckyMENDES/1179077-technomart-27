@@ -3,7 +3,7 @@
 let openButton = document.querySelector(".btn-writeus");
 let popup = document.querySelector(".modal-writeus");
 let closeButton = popup.querySelector(".modal-btn-close-writeus");
-let form = popup.querySelector("form");
+let submit = popup.querySelector(".btn-red");
 let name = popup.querySelector("[name=name]");
 let email = popup.querySelector("[name=email]");
 let message = popup.querySelector("[name=message");
@@ -22,10 +22,27 @@ try {
     isStorageSupport = false; // Отключаем localStorage если не поддерживается браузером
 }
 
+// let modal = document.querySelectorAll('[id|=modal]');
+// let btnCloseModal = document.querySelectorAll('.modal-btn-close');
+
+// btnCloseModal.forEach(item => {
+//   item.addEventListener('click', () => {
+//     document.querySelector('.modal-show').classList.remove('modal-show');
+//   });
+// });
+
+// modal.forEach(item => {
+//   item.addEventListener('click', () => {
+//     let idTarget = item.dataset.modalTarget;
+//     document.querySelector(idTarget).classList.add('.modal-show');
+//   });
+// });
+
 // Открытие модального окна
 openButton.addEventListener("click", function (evt) {
     evt.preventDefault();
     popup.classList.add("modal-show");
+
     if(storageName) { // Если в localStorage есть данные добавляем их в поля "Имя" и "E-Mail"
         name.value = storageName;
         email.value = storageEmail;
@@ -41,7 +58,7 @@ closeButton.addEventListener("click", function (evt) {
 })
 
 // Проверка отправки пустых полей
-form.addEventListener("submit", function (evt){
+submit.addEventListener("click", function (evt){
     if(!name.value || !email.value || !message.value) { // Действия если все поля не заполнены
         evt.preventDefault();
         popup.classList.remove("modal-error");
@@ -55,14 +72,19 @@ form.addEventListener("submit", function (evt){
     }
 })
 
+
 // Закрытие модального окна если нажата клавиша Esc
 window.addEventListener("keydown", function (evt){
     if (evt.keyCode === 27) {
         evt.preventDefault();
-        if (popup.classList.contains("modal-show")) { // Если у модального окна есть класс "modal-show"
-            popup.classList.remove("modal-show"); // Удалить класс "modal-show"
-            popup.classList.remove("modal-error");
+        if(document.querySelector('.modal-show')) {
+          document.querySelector('.modal-show').classList.remove('modal-show');
+          popup.classList.remove("modal-error");
         }
+        // if (popup.classList.contains("modal-show")) { // Если у модального окна есть класс "modal-show"
+        //     popup.classList.remove("modal-show"); // Удалить класс "modal-show"
+        //     popup.classList.remove("modal-error");
+        // }
     }
 })
 
@@ -102,10 +124,11 @@ var buttons = document.querySelectorAll('.features__bottom__buttons__btn');
 for (var button of buttons) {
    button.addEventListener('click', function () {
      buttons.forEach(i => i.classList.remove('features__bottom__buttons__btn-active'));
-   
+
      this.classList.toggle('features__bottom__buttons__btn-active');
    });
 };
+
 
 // Слайдер
 var featuresText = document.querySelector('.features__bottom__text');
